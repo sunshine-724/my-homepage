@@ -1,3 +1,4 @@
+//このtsxファイルはこのファイル以下の階層のページにおける共通レイアウトを決める
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
