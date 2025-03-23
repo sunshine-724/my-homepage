@@ -17,11 +17,6 @@ const theme = createTheme({
             default: '#fafafa',
             paper: '#fff',
         },
-        // headerBackground: {
-        //     main: "#40E0D0",
-        //     dark: "#621B16",
-        //     light: "#FEECEB",
-        // },
     },
 });
 

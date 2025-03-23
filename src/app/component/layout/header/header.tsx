@@ -43,6 +43,7 @@ function Header() {
         router.push('/notification')
         break
       default:
+        alert("存在しないページです")
         console.error("エラーです")
     }
     setAnchorElNav(null);
