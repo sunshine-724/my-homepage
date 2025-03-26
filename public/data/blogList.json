@@ -1,31 +1,31 @@
 [
   {
     "id": "1",
-    "title": "Blog 1",
+    "title": "Getting Started with Python Automation",
     "date": "2025-01-04",
     "chips": ["JavaScript", "React"]
   },
   {
     "id": "2",
-    "title": "Blog 2",
+    "title": "Implementing RESTful APIs in Node.js",
     "date": "2025-01-10",
     "chips": ["C#", ".NET"]
   },
   {
     "id": "3",
-    "title": "Blog 3",
+    "title": "Advanced TypeScript with Decorators",
     "date": "2025-01-31",
     "chips": ["TypeScript", "Angular"]
   },
   {
     "id": "4",
-    "title": "Blog 4",
+    "title": "Mastering React Hooks for Frontend",
     "date": "2025-02-06",
     "chips": ["Vue.js", "FrontEnd"]
   },
   {
     "id": "5",
-    "title": "Blog 5",
+    "title": "Exploring Serverless Architecture on AWS",
     "date": "2025-02-28",
     "chips": ["PHP", "Laravel"]
   },

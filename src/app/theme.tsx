@@ -14,8 +14,8 @@ import {createTheme} from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         background: {
-            default: '#fafafa',
-            paper: '#fff',
+            default: '#fafafa', //普通の背景色
+            paper: '#f0f0f0', //Cardコンポーネントなどの背景色
         },
     },
 });
