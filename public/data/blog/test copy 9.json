@@ -1,0 +1,102 @@
+[
+    {
+      "title": "Introduction to JavaScript",
+      "description": "Learn the basics of JavaScript, the most popular programming language.",
+      "chips": ["JavaScript", "Programming", "Basics"]
+    },
+    {
+      "title": "Understanding React",
+      "description": "A guide to building user interfaces with React.",
+      "chips": ["React", "Frontend", "JavaScript"]
+    },
+    {
+      "title": "CSS Grid Layout",
+      "description": "Master the CSS Grid layout system for responsive design.",
+      "chips": ["CSS", "Grid", "Web Design"]
+    },
+    {
+      "title": "Node.js for Beginners",
+      "description": "Get started with server-side programming using Node.js.",
+      "chips": ["Node.js", "Backend", "JavaScript"]
+    },
+    {
+      "title": "Building REST APIs",
+      "description": "Learn how to create RESTful APIs with Express.js.",
+      "chips": ["API", "Express.js", "Backend"]
+    },
+    {
+      "title": "Introduction to TypeScript",
+      "description": "Enhance your JavaScript skills with TypeScript.",
+      "chips": ["TypeScript", "JavaScript", "Programming"]
+    },
+    {
+      "title": "Responsive Web Design",
+      "description": "Learn techniques for building responsive websites.",
+      "chips": ["Web Design", "CSS", "Responsive"]
+    },
+    {
+      "title": "Python for Data Science",
+      "description": "Explore data science concepts using Python.",
+      "chips": ["Python", "Data Science", "Machine Learning"]
+    },
+    {
+      "title": "Getting Started with Docker",
+      "description": "Learn how to containerize applications using Docker.",
+      "chips": ["Docker", "DevOps", "Containers"]
+    },
+    {
+      "title": "Version Control with Git",
+      "description": "Master version control using Git and GitHub.",
+      "chips": ["Git", "GitHub", "Version Control"]
+    },
+    {
+      "title": "Introduction to Vue.js",
+      "description": "Build interactive web applications with Vue.js.",
+      "chips": ["Vue.js", "Frontend", "JavaScript"]
+    },
+    {
+      "title": "Understanding GraphQL",
+      "description": "Learn how to use GraphQL for API development.",
+      "chips": ["GraphQL", "API", "Backend"]
+    },
+    {
+      "title": "Kubernetes Basics",
+      "description": "An introduction to Kubernetes for container orchestration.",
+      "chips": ["Kubernetes", "DevOps", "Containers"]
+    },
+    {
+      "title": "Building Mobile Apps with Flutter",
+      "description": "Create cross-platform mobile apps using Flutter.",
+      "chips": ["Flutter", "Mobile Development", "Dart"]
+    },
+    {
+      "title": "Introduction to Machine Learning",
+      "description": "Learn the fundamentals of machine learning.",
+      "chips": ["Machine Learning", "AI", "Python"]
+    },
+    {
+      "title": "SEO Best Practices",
+      "description": "Optimize your website for search engines.",
+      "chips": ["SEO", "Web Development", "Marketing"]
+    },
+    {
+      "title": "Building Progressive Web Apps",
+      "description": "Learn how to create PWAs for better user experiences.",
+      "chips": ["PWA", "Web Development", "JavaScript"]
+    },
+    {
+      "title": "Introduction to Rust",
+      "description": "Get started with Rust programming language.",
+      "chips": ["Rust", "Programming", "Systems"]
+    },
+    {
+      "title": "Understanding Web Accessibility",
+      "description": "Make your websites accessible to everyone.",
+      "chips": ["Accessibility", "Web Design", "HTML"]
+    },
+    {
+      "title": "Cloud Computing with AWS",
+      "description": "Learn the basics of cloud computing using AWS.",
+      "chips": ["AWS", "Cloud Computing", "DevOps"]
+    }
+  ]

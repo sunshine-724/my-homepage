@@ -203,6 +203,7 @@ Nightcore
                 title={page.title}
                 description={page.description}
                 initToggle={page.isOpenToggle}
+                withContent={false}
               />
             );
           })}
