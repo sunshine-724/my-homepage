@@ -1,6 +1,5 @@
 "use client"
 import { Box, Button, CardActionArea, ThemeProvider, Typography } from "@mui/material";
-import Grid from "@mui/material/Grid2";
 import ProjectCard from "../component/ProjectCard/ProjectCard"
 import SearchAppBar from "./SearchAppBar";
 import Footer from "../component/layout/footer/footer";
@@ -27,7 +26,7 @@ const BlogPage = () => {
           height: "20%",
           marginTop: {xs:"5%",sm:"2%"}
         }}>
-          <Typography variant="h2" sx={{fontSize:{ xs: "1.5rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" }}}> {/* mt: 0 にして調整 */}
+          <Typography variant="h2" sx={{fontSize:{ xs: "1.rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" }}}> {/* mt: 0 にして調整 */}
             ブログ一覧
           </Typography>
           <SearchAppBar

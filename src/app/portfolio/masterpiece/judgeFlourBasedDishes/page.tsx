@@ -20,7 +20,7 @@ export default function JudgeFlourBasedDishesPage() {
           image="/portfolio/judgeFlourBasedDishes.png"
           title="粉物判定アプリ"
           description = {descriptionText}
-          chips={["Javascript", "React"]}
+          chips={["JavaScript", "React"]}
         />
         <Footer />
       </ThemeProvider>
