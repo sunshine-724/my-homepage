@@ -25,9 +25,9 @@ const BlogPage = () => {
           position: "relative",
           width: "100%",
           height: "20%",
-          marginTop: "2%",
+          marginTop: {xs:"5%",sm:"2%"}
         }}>
-          <Typography variant="h2" sx={{fontSize:{ xs: "1.8rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" }}}> {/* mt: 0 にして調整 */}
+          <Typography variant="h2" sx={{fontSize:{ xs: "1.5rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" }}}> {/* mt: 0 にして調整 */}
             ブログ一覧
           </Typography>
           <SearchAppBar

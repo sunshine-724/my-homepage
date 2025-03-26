@@ -55,7 +55,7 @@ function Header() {
         <Typography
           sx={{
             textAlign: 'center',
-            fontSize: "2.0rem",
+            fontSize: { xs: '1.8rem', sm: "2.0rem"},
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -63,9 +63,9 @@ function Header() {
         >
           Sunshineのホームページ
         </Typography>
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ display: { xs: "none", sm: "flex" }}}>
           {/* xs:スマホなら,md:900px以上なら */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'space-between', alignItems: 'center' }}>
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             {pages.map((page, index) => (
               <Button
                 key={page}
