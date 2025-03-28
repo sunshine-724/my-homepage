@@ -1,6 +1,8 @@
 "use client"
-import { Tooltip, SxProps, Button, Typography } from "@mui/material";
+import { Tooltip, SxProps, Button, Typography, Box } from "@mui/material";
 import { useState } from "react";
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
 
 interface ClipBoardProps {
   text: string;
@@ -38,19 +40,27 @@ const ClipBoard: React.FC<ClipBoardProps> = ({ text, sx }) => {
           placement="top"
           title="Copied!"
         >
+          <Box
+            sx={{
+              backgroundColor: "#40E0D0",
+              display: "flex",
+            }}
+          >
           <Button
             onClick={handleClickButton}
-            sx={sx}
-            variant="contained"
+            sx={{
+              ...sx,
+            }}
+            size="small"
           >
-            <Typography
-              sx={{
+            {text}
+            <ContentCopyIcon
+              sx = {{
                 fontSize: { xs: "1.0rem", sm: "1.5rem", md: "2.0rem", lg: "2.5rem" },
               }}
-            >
-              {text}
-            </Typography>
+             />
           </Button>
+          </Box>
         </Tooltip>
       )}
     </>
