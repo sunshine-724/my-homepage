@@ -1,4 +1,3 @@
-/*参考URL https://qiita.com/k2hmr/items/a5b19f3b65376a595310 */
 "use client"
 import Header from "../component/layout/header/header"
 import Footer from "../component/layout/footer/footer"

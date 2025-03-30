@@ -37,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, ch
                         <Chip
                             key={chip}
                             label={chip}
-                            sx={{ backgroundColor: getChipColor(chip), color: "#fff" }} // 背景色適用
+                            sx={{ backgroundColor: getChipColor(chip), color: "#f8f8f8" }} // 背景色適用
                         />
                     </React.Fragment>
                 ))}

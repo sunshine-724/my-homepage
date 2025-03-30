@@ -19,14 +19,20 @@ const BlogPage = () => {
         <Header />
         <Box sx={{
           display: "flex",
-          alignItems: "center", // これを追加（縦方向の中央揃え）
           justifyContent: "center",
-          position: "relative",
+          alignItems: "center",
           width: "100%",
           height: "20%",
-          marginTop: {xs:"5%",sm:"2%"}
+          marginTop: {xs:"5%",sm:"2%"},
+          flexDirection:  {xs:"column", sm:"row"}, //columnかrowでjustifyContentとalignItemsの役割が反対になる
+          position: "relative",
         }}>
-          <Typography variant="h2" sx={{fontSize:{ xs: "1.rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" }}}> {/* mt: 0 にして調整 */}
+          <Typography 
+          variant="h2" 
+          sx={{
+            fontSize:{ xs: "2.2rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" },
+            justifyContent:"center",
+            }}> {/* mt: 0 にして調整 */}
             ブログ一覧
           </Typography>
           <SearchAppBar
@@ -39,7 +45,8 @@ const BlogPage = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-          }}>
+          }}
+        >
           {jsonBlogList.map((json, index) => {
             return (
               <React.Fragment key={index}>

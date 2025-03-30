@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "title": "サイトメンテナンスのお知らせ",
+    "importance": "red",
+    "date": "2025-04-01",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 2,
+    "title": "新機能リリースのお知らせ",
+    "importance": "green",
+    "date": "2025-03-15",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 3,
+    "title": "アカウント情報の更新について",
+    "importance": "yellow",
+    "date": "2025-02-28",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 4,
+    "title": "セキュリティアップデートのお願い",
+    "importance": "red",
+    "date": "2025-02-20",
+    "isPublished": true,
+    "category": "セキュリティ"
+  },
+  {
+    "id": 5,
+    "title": "年末年始の営業時間変更",
+    "importance": "blue",
+    "date": "2024-12-25",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 6,
+    "title": "システム障害の復旧完了",
+    "importance": "green",
+    "date": "2025-01-05",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 7,
+    "title": "料金プラン改定のお知らせ",
+    "importance": "yellow",
+    "date": "2025-04-10",
+    "isPublished": false,
+    "category": "お知らせ"
+  },
+  {
+    "id": 8,
+    "title": "スマホアプリ版リリース",
+    "importance": "green",
+    "date": "2025-03-01",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 9,
+    "title": "不正アクセスに関するご報告",
+    "importance": "red",
+    "date": "2025-02-15",
+    "isPublished": true,
+    "category": "セキュリティ"
+  },
+  {
+    "id": 10,
+    "title": "利用規約改定のご案内",
+    "importance": "blue",
+    "date": "2025-05-01",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 11,
+    "title": "定期メンテナンス実施のお知らせ",
+    "importance": "yellow",
+    "date": "2025-05-15",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 12,
+    "title": "新サービス開始のご案内",
+    "importance": "green",
+    "date": "2025-06-01",
+    "isPublished": false,
+    "category": "アップデート"
+  },
+  {
+    "id": 13,
+    "title": "パスワード定期変更のお願い",
+    "importance": "blue",
+    "date": "2025-03-10",
+    "isPublished": true,
+    "category": "セキュリティ"
+  },
+  {
+    "id": 14,
+    "title": "サーバー増強完了のお知らせ",
+    "importance": "green",
+    "date": "2025-02-01",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 15,
+    "title": "会員ポイントシステム導入",
+    "importance": "yellow",
+    "date": "2025-07-01",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 16,
+    "title": "夏季休業のお知らせ",
+    "importance": "blue",
+    "date": "2025-08-10",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 17,
+    "title": "API仕様変更のご案内",
+    "importance": "yellow",
+    "date": "2025-05-20",
+    "isPublished": true,
+    "category": "開発者向け"
+  },
+  {
+    "id": 18,
+    "title": "緊急セキュリティパッチの適用",
+    "importance": "red",
+    "date": "2025-04-15",
+    "isPublished": true,
+    "category": "セキュリティ"
+  },
+  {
+    "id": 19,
+    "title": "新デザイン実装のお知らせ",
+    "importance": "green",
+    "date": "2025-06-15",
+    "isPublished": false,
+    "category": "アップデート"
+  },
+  {
+    "id": 20,
+    "title": "連携サービス終了のご案内",
+    "importance": "red",
+    "date": "2025-09-30",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 21,
+    "title": "定期バックアップ実施のお知らせ",
+    "importance": "blue",
+    "date": "2025-03-20",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 22,
+    "title": "カスタマーサポート窓口変更",
+    "importance": "yellow",
+    "date": "2025-05-05",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 23,
+    "title": "多言語対応機能追加",
+    "importance": "green",
+    "date": "2025-07-15",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 24,
+    "title": "二段階認証導入のご案内",
+    "importance": "yellow",
+    "date": "2025-04-20",
+    "isPublished": true,
+    "category": "セキュリティ"
+  },
+  {
+    "id": 25,
+    "title": "システム統合によるサービス停止",
+    "importance": "red",
+    "date": "2025-08-01",
+    "isPublished": false,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 26,
+    "title": "プライバシーポリシー改定",
+    "importance": "blue",
+    "date": "2025-06-30",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 27,
+    "title": "ベータ版テスターの募集",
+    "importance": "green",
+    "date": "2025-07-30",
+    "isPublished": true,
+    "category": "開発者向け"
+  },
+  {
+    "id": 28,
+    "title": "ウイルス対策機能の強化",
+    "importance": "yellow",
+    "date": "2025-05-30",
+    "isPublished": true,
+    "category": "セキュリティ"
+  },
+  {
+    "id": 29,
+    "title": "ユーザー満足度調査のお願い",
+    "importance": "blue",
+    "date": "2025-09-01",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 30,
+    "title": "年次システム監査実施",
+    "importance": "yellow",
+    "date": "2025-10-15",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 31,
+    "title": "新支払い方法の追加",
+    "importance": "green",
+    "date": "2025-08-15",
+    "isPublished": false,
+    "category": "アップデート"
+  },
+  {
+    "id": 32,
+    "title": "個人情報取扱いの変更点",
+    "importance": "red",
+    "date": "2025-07-20",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 33,
+    "title": "クラウドストレージ容量増強",
+    "importance": "green",
+    "date": "2025-09-15",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 34,
+    "title": "リアルタイム通知機能の追加",
+    "importance": "blue",
+    "date": "2025-08-30",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 35,
+    "title": "サーバー移転に伴うドメイン変更",
+    "importance": "red",
+    "date": "2025-11-01",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 36,
+    "title": "年末特別キャンペーン実施",
+    "importance": "green",
+    "date": "2025-12-01",
+    "isPublished": false,
+    "category": "お知らせ"
+  },
+  {
+    "id": 37,
+    "title": "データセンター増設のお知らせ",
+    "importance": "blue",
+    "date": "2025-10-01",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 38,
+    "title": "API新バージョンリリース",
+    "importance": "yellow",
+    "date": "2025-09-20",
+    "isPublished": true,
+    "category": "開発者向け"
+  },
+  {
+    "id": 39,
+    "title": "ネットワーク機器交換のお知らせ",
+    "importance": "red",
+    "date": "2025-10-30",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 40,
+    "title": "オンラインセミナー開催のお知らせ",
+    "importance": "green",
+    "date": "2025-11-15",
+    "isPublished": true,
+    "category": "イベント"
+  },
+  {
+    "id": 41,
+    "title": "モバイルアプリ不具合修正",
+    "importance": "yellow",
+    "date": "2025-08-20",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 42,
+    "title": "ユーザーインターフェース改善",
+    "importance": "blue",
+    "date": "2025-11-30",
+    "isPublished": false,
+    "category": "アップデート"
+  },
+  {
+    "id": 43,
+    "title": "障害発生のお詫びとご報告",
+    "importance": "red",
+    "date": "2025-06-10",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 44,
+    "title": "新しい検索機能の実装",
+    "importance": "green",
+    "date": "2025-12-15",
+    "isPublished": true,
+    "category": "アップデート"
+  },
+  {
+    "id": 45,
+    "title": "第三者認証取得のお知らせ",
+    "importance": "blue",
+    "date": "2025-11-10",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 46,
+    "title": "年始の営業開始日について",
+    "importance": "yellow",
+    "date": "2026-01-05",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 47,
+    "title": "緊急システム修正対応",
+    "importance": "red",
+    "date": "2025-12-05",
+    "isPublished": true,
+    "category": "メンテナンス"
+  },
+  {
+    "id": 48,
+    "title": "機械学習機能のベータ版公開",
+    "importance": "green",
+    "date": "2026-01-15",
+    "isPublished": false,
+    "category": "開発者向け"
+  },
+  {
+    "id": 49,
+    "title": "コンプライアンス体制の強化",
+    "importance": "blue",
+    "date": "2025-12-20",
+    "isPublished": true,
+    "category": "お知らせ"
+  },
+  {
+    "id": 50,
+    "title": "年頭のご挨拶",
+    "importance": "green",
+    "date": "2026-01-01",
+    "isPublished": true,
+    "category": "お知らせ"
+  }
+]

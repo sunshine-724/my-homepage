@@ -37,7 +37,7 @@ const caution: React.FC<cautionProps> = ({ commonTopBoxStyles, commonTextStyles 
                         ・通常3日以内に返信しますが、連絡がない場合はお手数ですが再度ご連絡ください
                         ・このWebサイトで何か不具合があった場合は以下のGithubのIssuesにてご連絡ください
                         ・連絡先は変更される場合がありますので、最新の情報はこのWebサイトをご確認ください
-                        `
+                    `
                 }
             </Typography>
             <Button onClick={() => window.open("https://github.com/sunshine-724/my-homepage/issues", "_blank")} sx={{ textTransform: "none" }}>
