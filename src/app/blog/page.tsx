@@ -22,57 +22,57 @@ const BlogPage = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header />
-        <Box sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "20%",
-          marginTop: { xs: "5%", sm: "2%" },
-          flexDirection: { xs: "column", sm: "row" }, //columnかrowでjustifyContentとalignItemsの役割が反対になる
-          position: "relative",
-        }}>
-          <Typography
-            variant="h2"
-            sx={{
-              fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" },
-              justifyContent: "center",
-            }}> {/* mt: 0 にして調整 */}
-            ブログ一覧
-          </Typography>
-          <SearchAppBar
-            onSearch={setSearchQuery}
-          />
-        </Box>
-
-        <Box
-          sx={{
+          <Header />
+          <Box sx={{
             display: "flex",
-            flexDirection: "column",
+            justifyContent: "center",
             alignItems: "center",
-          }}
-        >
-          {jsonBlogList.map((json, index) => {
-            return (
-              <React.Fragment key={index}>
-                <Button
-                  key={index}
-                  onClick={() => handleClick(json.id)} //クリック処理
-                  sx={{ textTransform: "none", width: "100%" }}
-                >
-                  <ProjectCard               //各ブログのタイトル、日付、タグを表示
-                    title={json.title}
-                    description={json.date}
-                    chips={json.chips || []}
+            width: "100%",
+            height: "20%",
+            marginTop: { xs: "5%", sm: "2%" },
+            flexDirection: { xs: "column", sm: "row" }, //columnかrowでjustifyContentとalignItemsの役割が反対になる
+            position: "relative",
+          }}>
+            <Typography
+              variant="h2"
+              sx={{
+                fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" },
+                justifyContent: "center",
+              }}> {/* mt: 0 にして調整 */}
+              ブログ一覧
+            </Typography>
+            <SearchAppBar
+              onSearch={setSearchQuery}
+            />
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {jsonBlogList.map((json, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <Button
+                    key={index}
+                    onClick={() => handleClick(json.id)} //クリック処理
+                    sx={{ textTransform: "none", width: "100%" }}
                   >
-                  </ProjectCard>
-                </Button>
-              </React.Fragment>
-            );
-          })}
-        </Box>
-        <Footer />
+                    <ProjectCard               //各ブログのタイトル、日付、タグを表示
+                      title={json.title}
+                      description={json.date}
+                      chips={json.chips || []}
+                    >
+                    </ProjectCard>
+                  </Button>
+                </React.Fragment>
+              );
+            })}
+          </Box>
+          <Footer />
       </ThemeProvider >
     </>
   );

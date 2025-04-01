@@ -5,25 +5,40 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { colors } from '@mui/material';
 
 import { useRouter } from 'next/navigation';
+import HeaderAnimatedButton from './HeaderAnimatedButton';
+
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { useState } from 'react';
+import { Collapse } from '@mui/material';
 
 const pages = ['ポートフォリオ', '自己紹介', 'ブログ', 'お問い合わせ', 'お知らせ'];
 
 function Header() {
-  const router = useRouter()
+  const router = useRouter();
+  // const { scrollY } = useScroll(); //これはreactの機能ではなく、framer-motionの機能なので、描画を更新したいならuseEffectの中で使う必要がある
+  const { scrollY } = useScroll();
+
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+
+  const [scrollState, setScrollState] = useState<boolean>(true); //このヘッダの状態を管理
+  const [lastScrollY, setLastScrollY] = useState<number>(0); //最後のスクロール位置を管理
+
+  useMotionValueEvent(scrollY, "change", (currentScrollY) => {
+
+    if (currentScrollY > lastScrollY) {
+      console.log("下スクロール → ヘッダー非表示");
+      setScrollState(false);
+    } else {
+      console.log("上スクロール → ヘッダー表示");
+      setScrollState(true);
+    }
+    setLastScrollY(currentScrollY);
+  });
 
   const handlePageTransiton = (pageNumber: number) => {
     switch (pageNumber) {
@@ -50,42 +65,37 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{ background: "#40E0D0" }}>
-      <Container maxWidth="xl">
-        <Typography
-          sx={{
-            textAlign: 'center',
-            fontSize: { xs: '1.8rem', sm: "2.0rem"},
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          Sunshineのホームページ
-        </Typography>
-        <Toolbar disableGutters sx={{ display: { xs: "none", sm: "flex" }}}>
-          {/* xs:スマホなら,md:900px以上なら */}
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            {pages.map((page, index) => (
-              <Button
-                key={page}
-                onClick={() => handlePageTransiton(index)}
-                sx={{
-                  my: 2,
-                  color: 'white',
-                  display: 'block',
-                  fontSize: '1.5rem',
-                  flexGrow: 1, // 均等に配置
-                  textAlign: 'center',
-                }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <Collapse in={scrollState}>
+      <AppBar position="static" sx={{ background: "#40E0D0" }}>
+        <Container maxWidth="xl">
+          <Typography
+            sx={{
+              textAlign: 'center',
+              fontSize: { xs: '1.8rem', sm: "2.0rem" },
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            Sunshineのホームページ
+          </Typography>
+          <Toolbar disableGutters sx={{ display: { xs: "none", sm: "flex" } }}>
+            {/* xs:スマホなら,md:900px以上なら */}
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              {pages.map((page, index) => (
+                <Box key={page} sx={{ display: 'block' }}>
+                  <HeaderAnimatedButton
+                    page={page}
+                    index={index}
+                    handlePageTransition={handlePageTransiton}
+                  />
+                </Box>
+              ))}
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </Collapse>
   );
 }
 export default Header;

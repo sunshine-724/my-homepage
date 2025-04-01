@@ -23,3 +23,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: auto !important; /*Chrome君はsmooth scrollがデフォルトで効いているので、javascriptでのscrollの値を監視しにくくなる*/
+}
