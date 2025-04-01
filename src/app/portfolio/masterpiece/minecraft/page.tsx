@@ -1,9 +1,4 @@
-import Header from "../../../component/layout/header/header"
-import Footer from "../../../component/layout/footer/footer"
-import ProjectCard from "../../../component/ProjectCard/ProjectCard"
-import theme from "../../../theme"
-
-import { Avatar, Box, ButtonBase, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Chip, Paper, ThemeProvider, Typography } from "@mui/material";
+import ProjectCard from "@/app/component/ProjectCard/ProjectCard"
 
 //改行を直接含む文字列を定義するときはテンプレートリテラル(`:バッククォートを使う)
 const descriptionText = `
@@ -16,16 +11,12 @@ const descriptionText = `
 export default function MinecraftPage() {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <ProjectCard
-          image="/portfolio/minecraft.png"
-          title="じゃりじゃりMod"
-          description = {descriptionText}
-          chips={["Java", "Gradle"]}
-        />
-        <Footer />
-      </ThemeProvider>
+      <ProjectCard
+        image="/portfolio/minecraft.png"
+        title="じゃりじゃりMod"
+        description={descriptionText}
+        chips={["Java", "Gradle"]}
+      />
     </>
   );
 }

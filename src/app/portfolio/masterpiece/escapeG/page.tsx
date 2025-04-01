@@ -1,9 +1,4 @@
-import Header from "../../../component/layout/header/header"
-import Footer from "../../../component/layout/footer/footer"
-import ProjectCard from "../../../component/ProjectCard/ProjectCard"
-import theme from "../../../theme"
-
-import {ThemeProvider} from "@mui/material";
+import ProjectCard from "@/app/component/ProjectCard/ProjectCard"
 
 //改行を直接含む文字列を定義するときはテンプレートリテラル(`:バッククォートを使う)
 const descriptionText = `
@@ -15,16 +10,12 @@ const descriptionText = `
 export default function EscapeGPage() {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <ProjectCard
-          image="/portfolio/escapeG.png"
-          title="G社からの脱出"
-          description = {descriptionText}
-          chips={["C#", "Unity"]}
-        />
-        <Footer />
-      </ThemeProvider>
+      <ProjectCard
+        image="/portfolio/escapeG.png"
+        title="G社からの脱出"
+        description={descriptionText}
+        chips={["C#", "Unity"]}
+      />
     </>
   );
 }

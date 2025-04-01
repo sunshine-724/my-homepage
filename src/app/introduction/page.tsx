@@ -1,10 +1,6 @@
 "use client"
-import Header from "../component/layout/header/header"
-import Footer from "../component/layout/footer/footer"
-import InfoCard from "../component/InfoCard/InfoCard";
-import theme from "../theme"
 import { Box, ThemeProvider } from "@mui/material";
-import InfoCardWithToggleButton from "../component/InfoCard/InfoCardWithToggleButton";
+import InfoCardWithToggleButton from "@/app/component/InfoCard/InfoCardWithToggleButton";
 
 export default function Introduction() {
   const currentDate = new Date();
@@ -105,7 +101,7 @@ Youtubeの解説動画はピクトグラムやアニメーションを使って�
 SCP-CN-2000はSCP-5000の良い復習にもなりますし、提言も絡んでくるのでとても好きです。
 `
 
-const aboutProgrammingMovieText = `
+  const aboutProgrammingMovieText = `
 プログラミング動画は主に通学中に見ています。  
 日本の動画も見ることもあれば、海外の動画も見ることもあります(字幕付きで)。  
 見ているジャンルは様々でWeb制作、Unityを用いたゲーム制作、競技プログラミングなど多岐にわたります。    
@@ -115,7 +111,7 @@ const aboutProgrammingMovieText = `
 数字キーもブラインドタッチできる人尊敬してますし、早く自分もそうなりたいです。  
 `
 
-const aboutCutOutMovieText = `
+  const aboutCutOutMovieText = `
 切り抜き動画はおすすめに流れているものを適当に見ています。  
 自分は好きなYoutuberがいないので、ほんとに適当に見ています。  
 けれどおすすめに流れてくるのって大体Vtuberの切り抜きだったり、FPSやTPS、格闘ゲームの切り抜きだったりするので、それを見ています。 
@@ -124,7 +120,7 @@ const aboutCutOutMovieText = `
 小学生の頃はYoutubeを結構見ていて、中学、高校生の頃はあまり見ていなかったので驚きました。  
 `
 
-const aboutMusicText = `
+  const aboutMusicText = `
 音楽に関しても色々なジャンルを聴いています。
 主に聴いているのは音ゲー、アニソン、ボカロ、K-POP、Nightcoreなどです。
 これらのジャンルを一定周期で聞いていると思います。(大体2ヶ月周期)
@@ -173,29 +169,27 @@ Nightcore
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}>
-          {pages.map((page, index) => {
-            return (
-              <InfoCardWithToggleButton
-                key={index}
-                title={page.title}
-                description={page.description}
-                initToggle={page.isOpenToggle}
-              />
-            );
-          })}
-          <InfoCardWithToggleButton
-            title={pageAboutYoutube.title}
-            description={pageAboutYoutube.description}
-            initToggle={pageAboutYoutube.isOpenToggle}
-          >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}>
+        {pages.map((page, index) => {
+          return (
+            <InfoCardWithToggleButton
+              key={index}
+              title={page.title}
+              description={page.description}
+              initToggle={page.isOpenToggle}
+            />
+          );
+        })}
+        <InfoCardWithToggleButton
+          title={pageAboutYoutube.title}
+          description={pageAboutYoutube.description}
+          initToggle={pageAboutYoutube.isOpenToggle}
+        >
           {pageAboutYoutubeDetail.map((page, index) => {
             return (
               <InfoCardWithToggleButton
@@ -207,10 +201,8 @@ Nightcore
               />
             );
           })}
-          </InfoCardWithToggleButton>
-        </Box>
-        <Footer />
-      </ThemeProvider>
+        </InfoCardWithToggleButton>
+      </Box>
     </>
   );
 }

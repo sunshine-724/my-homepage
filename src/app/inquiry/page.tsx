@@ -1,9 +1,5 @@
 "use client"
-import Header from "../component/layout/header/header"
-import Footer from "../component/layout/footer/footer"
-import ClipBoard from "../component/ClipBoard/ClipBoard"
-import theme from "../theme"
-import { Box, Button, IconButton, Link, ThemeProvider, Typography } from "@mui/material";
+import { Box} from "@mui/material";
 import ContactAddress from "./contactAddress"
 import Caution from "./caution"
 
@@ -24,29 +20,25 @@ export default function Inquiry() {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" }, // スマホなら縦, それ以上は横
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "1rem",
-            gap: "1rem",
-          }}
-        >
-          <ContactAddress
-            commonTopBoxStyles={commonTopBoxStyles}
-            commonTextStyles={commonTextStyles}
-          />
-          <Caution
-            commonTopBoxStyles={commonTopBoxStyles}
-            commonTextStyles={commonTextStyles}
-          />
-        </Box>
-        <Footer />
-      </ThemeProvider >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" }, // スマホなら縦, それ以上は横
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "1rem",
+          gap: "1rem",
+        }}
+      >
+        <ContactAddress
+          commonTopBoxStyles={commonTopBoxStyles}
+          commonTextStyles={commonTextStyles}
+        />
+        <Caution
+          commonTopBoxStyles={commonTopBoxStyles}
+          commonTextStyles={commonTextStyles}
+        />
+      </Box>
     </>
   );
 }

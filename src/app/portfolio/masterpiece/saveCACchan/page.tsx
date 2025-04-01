@@ -1,7 +1,5 @@
-import Header from "../../../component/layout/header/header"
-import Footer from "../../../component/layout/footer/footer"
-import ProjectCard from "../../../component/ProjectCard/ProjectCard"
-import theme from "../../../theme"
+
+import ProjectCard from "@/app/component/ProjectCard/ProjectCard"
 
 import { Avatar, Box, ButtonBase, Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Chip, Paper, ThemeProvider, Typography } from "@mui/material";
 
@@ -16,16 +14,12 @@ CACちゃんをコントローラを用いて操作して特定のステージ�
 export default function SaveCACchanPage() {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Header />
-        <ProjectCard
-          image="/portfolio/saveCACchan.png"
-          title="CACちゃんを救え"
-          description = {descriptionText}
-          chips={["C#", "Unity"]}
-        />
-        <Footer />
-      </ThemeProvider>
+      <ProjectCard
+        image="/portfolio/saveCACchan.png"
+        title="CACちゃんを救え"
+        description={descriptionText}
+        chips={["C#", "Unity"]}
+      />
     </>
   );
 }

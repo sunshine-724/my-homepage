@@ -1,9 +1,6 @@
 "use client"
-import Header from "../component/layout/header/header"
-import Footer from "../component/layout/footer/footer"
-import {IconButtonWithTitle} from "../component/IconButton/IconButton"
-import theme from "../theme"
-import { Avatar, Box, ButtonBase, ThemeProvider, Typography } from "@mui/material";
+import { IconButtonWithTitle } from "@/app/component/IconButton/IconButton"
+import { Box } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 const PortfolioPage = () => {
@@ -17,8 +14,7 @@ const PortfolioPage = () => {
 
   return (
     <>
-      <Header />
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         {items.map((item, index) => (
           <Box
             key={item.title}
@@ -37,7 +33,6 @@ const PortfolioPage = () => {
           </Box>
         ))}
       </Box>
-      <Footer />
     </>
   );
 };

@@ -19,8 +19,7 @@ const pages = ['ポートフォリオ', '自己紹介', 'ブログ', 'お問い�
 
 function Header() {
   const router = useRouter();
-  // const { scrollY } = useScroll(); //これはreactの機能ではなく、framer-motionの機能なので、描画を更新したいならuseEffectの中で使う必要がある
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll(); //これはreactの機能ではなく、framer-motionの機能なので、描画を更新したいならuseEffectの中で使う必要がある
 
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -66,7 +65,9 @@ function Header() {
 
   return (
     <Collapse in={scrollState}>
-      <AppBar position="static" sx={{ background: "#40E0D0" }}>
+      {/* <AppBar position="static" sx={{ background: "#40E0D0" }}> */}
+      <AppBar position="fixed" sx={{ background: "#40E0D0", top: 0, left: 0, width: "100%",height:"125px",zIndex: 1000 }}>
+        {/* <AppBar position="absolute" sx={{ background: "#40E0D0", top: 0, left: 0, width: "100%", zIndex: 1000 }}> */}
         <Container maxWidth="xl">
           <Typography
             sx={{
