@@ -1,11 +1,16 @@
-import { AppBar, Toolbar, InputBase, IconButton } from "@mui/material";
+import { AppBar, Toolbar, InputBase, IconButton, ToggleButton, ToggleButtonGroup, Chip } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Collapse from "@mui/material/Collapse";
+import { useState } from "react";
 
-interface SearchAppBarProps {
+interface SearchAppBarWithTagProps {
   onSearch: (query: string) => void;
 }
 
-const SearchAppBar: React.FC<SearchAppBarProps> = ({ onSearch }) => {
+const SearchAppBarWithTag: React.FC<SearchAppBarWithTagProps> = ({ onSearch }) => {
+  const [expanded, setExpanded] = useState(false);
+  
   return (
     <Toolbar
       sx={{
@@ -17,6 +22,7 @@ const SearchAppBar: React.FC<SearchAppBarProps> = ({ onSearch }) => {
         height: { xs: "auto", sm: "100%" }, // xsのときは自動（親要素に合わせる）
       }}
     >
+
       <InputBase
         placeholder="検索..."
         sx={{
@@ -39,4 +45,4 @@ const SearchAppBar: React.FC<SearchAppBarProps> = ({ onSearch }) => {
   );
 };
 
-export default SearchAppBar;
+export default SearchAppBarWithTag;

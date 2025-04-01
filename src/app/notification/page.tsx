@@ -1,14 +1,18 @@
 "use client";
 import Header from "../component/layout/header/header"
 import Footer from "../component/layout/footer/footer"
-import SearchAppBar from "../blog/SearchAppBar";
+import SearchAppBar from "../component/SerachBar/SearchAppBar";
+import useFetchNoticeList from "./useFetchNoticeList";
+import NoticeList from "./NoticeList";
 import theme from "../theme"
-import { Box, Card, CardContent, ThemeProvider, Typography } from "@mui/material";
-import { title } from "process";
+import { Box, ThemeProvider, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function Notification() {
   const [searchQuery, setSearchQuery] = useState(""); //検索する文字列
+
+  const notices = useFetchNoticeList(); // そのまま `Notice[]` を取得
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -20,6 +24,7 @@ export default function Notification() {
           width: "100%",
           height: "20%",
           marginTop: { xs: "5%", sm: "2%" },
+          marginBottom: { xs: "5%", sm: "2%" },
           flexDirection: { xs: "column", sm: "row" }, //columnかrowでjustifyContentとalignItemsの役割が反対になる
           position: "relative",
         }}>
@@ -36,7 +41,7 @@ export default function Notification() {
           />
         </Box>
         <Box>
-            
+          <NoticeList notices={notices} />
         </Box>
         <Footer />
       </ThemeProvider>

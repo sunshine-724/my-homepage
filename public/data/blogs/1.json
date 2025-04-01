@@ -1,0 +1,7 @@
+
+{
+    "id": "1",
+    "title": "Getting Started with Python Automation",
+    "date": "2025-01-04",
+    "content": "# Python自動化入門\n\nPythonを使った自動化プロセスは、繰り返し作業の効率化に非常に役立ちます。本記事では、基本的なファイル操作から始め、Webスクレイピング、データ処理まで実用的な自動化テクニックを紹介します。\n\n## 必要なライブラリ\n- os, sys: ファイルシステム操作\n- pandas: データ分析・処理\n- Beautiful Soup: HTMLパース\n- Selenium: ブラウザ自動化\n\nPythonで繰り返し作業を自動化し、日々の業務効率を向上させましょう。"
+}

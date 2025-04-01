@@ -34,7 +34,7 @@
   {
     "id": 5,
     "title": "年末年始の営業時間変更",
-    "importance": "blue",
+    "importance": "yellow",
     "date": "2024-12-25",
     "isPublished": true,
     "category": "お知らせ"
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "title": "利用規約改定のご案内",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-05-01",
     "isPublished": true,
     "category": "お知らせ"
@@ -98,7 +98,7 @@
   {
     "id": 13,
     "title": "パスワード定期変更のお願い",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-03-10",
     "isPublished": true,
     "category": "セキュリティ"
@@ -122,7 +122,7 @@
   {
     "id": 16,
     "title": "夏季休業のお知らせ",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-08-10",
     "isPublished": true,
     "category": "お知らせ"
@@ -162,7 +162,7 @@
   {
     "id": 21,
     "title": "定期バックアップ実施のお知らせ",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-03-20",
     "isPublished": true,
     "category": "メンテナンス"
@@ -202,7 +202,7 @@
   {
     "id": 26,
     "title": "プライバシーポリシー改定",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-06-30",
     "isPublished": true,
     "category": "お知らせ"
@@ -226,7 +226,7 @@
   {
     "id": 29,
     "title": "ユーザー満足度調査のお願い",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-09-01",
     "isPublished": true,
     "category": "お知らせ"
@@ -266,7 +266,7 @@
   {
     "id": 34,
     "title": "リアルタイム通知機能の追加",
-    "importance": "blue",
+    "importance": "yellow",
     "date": "2025-08-30",
     "isPublished": true,
     "category": "アップデート"
@@ -290,7 +290,7 @@
   {
     "id": 37,
     "title": "データセンター増設のお知らせ",
-    "importance": "blue",
+    "importance": "green",
     "date": "2025-10-01",
     "isPublished": true,
     "category": "メンテナンス"
@@ -298,7 +298,7 @@
   {
     "id": 38,
     "title": "API新バージョンリリース",
-    "importance": "yellow",
+    "importance": "red",
     "date": "2025-09-20",
     "isPublished": true,
     "category": "開発者向け"
@@ -330,7 +330,7 @@
   {
     "id": 42,
     "title": "ユーザーインターフェース改善",
-    "importance": "blue",
+    "importance": "green",
     "date": "2025-11-30",
     "isPublished": false,
     "category": "アップデート"
@@ -354,7 +354,7 @@
   {
     "id": 45,
     "title": "第三者認証取得のお知らせ",
-    "importance": "blue",
+    "importance": "red",
     "date": "2025-11-10",
     "isPublished": true,
     "category": "お知らせ"
@@ -386,7 +386,7 @@
   {
     "id": 49,
     "title": "コンプライアンス体制の強化",
-    "importance": "blue",
+    "importance": "green",
     "date": "2025-12-20",
     "isPublished": true,
     "category": "お知らせ"

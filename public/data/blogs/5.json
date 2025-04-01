@@ -1,0 +1,6 @@
+{
+    "id": "5",
+    "title": "Exploring Serverless Architecture on AWS",
+    "date": "2025-02-28",
+    "content": "# AWSでのサーバーレスアーキテクチャ探求\n\nサーバーレスアーキテクチャは、インフラストラクチャ管理の負担を軽減し、スケーラビリティと費用対効果を向上させます。本記事では、AWSのサーバーレスサービスを活用したアプリケーション設計について詳しく解説します。\n\n## 内容\n- AWS Lambda関数の設計と最適化\n- API Gatewayによるエンドポイント管理\n- DynamoDBを使った効率的なデータ保存\n- S3とCloudFrontによる静的コンテンツ配信\n- CloudWatchによる監視とログ管理\n\nPHPとLaravelをサーバーレス環境で運用するためのベストプラクティスも紹介します。"
+}

@@ -5,6 +5,7 @@ interface BlogList {
     title: string;
     date: string;
     chips: string[];
+    file: string;
 }
 
 export default function useFetchBlogList(): BlogList[] {

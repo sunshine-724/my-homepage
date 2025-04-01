@@ -1,0 +1,6 @@
+{
+    "id": "2",
+    "title": "Implementing RESTful APIs in Node.js",
+    "date": "2025-01-10",
+    "content": "# Node.jsでRESTful APIを実装する方法\n\nNode.jsは軽量で高性能なサーバーサイドJavaScriptランタイムであり、REST APIの開発に最適です。この記事では、Expressフレームワークを使用してCRUD操作を備えた基本的なRESTful APIを構築する方法を解説します。\n\n## 主なトピック\n- RESTの基本原則\n- Expressでのルーティング設計\n- ミドルウェアの活用\n- データベース連携（MongoDB）\n- エラーハンドリングとバリデーション\n\n実際のコード例と共に、本番環境に対応するAPIの設計パターンを紹介します。"
+}
