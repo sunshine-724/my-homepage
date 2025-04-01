@@ -28,7 +28,7 @@ const BlogPage = () => {
         <Typography
           variant="h2"
           sx={{
-            fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" },
+            fontSize: { xs: "2.2rem", sm: "2.5rem", md: "3.0rem", lg: "4.0rem" },
             justifyContent: "center",
           }}> {/* mt: 0 にして調整 */}
           ブログ一覧

@@ -19,7 +19,7 @@ const SearchAppBar: React.FC<SearchAppBarProps> = ({ onSearch }) => {
         right: { xs: "auto", sm: 0 }, // xsのときは無効化
 
         width: { xs: "80%", sm: "30%" }, // xsのときは100%（親要素に合わせる）
-        height: { xs: "auto", sm: "100%" }, // xsのときは自動（親要素に合わせる）
+        height: "auto",
       }}
     >
 

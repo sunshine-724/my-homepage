@@ -2,7 +2,7 @@
 import SearchAppBar from "@/app/component/SerachBar/SearchAppBar";
 import useFetchNoticeList from "./useFetchNoticeList";
 import NoticeList from "./NoticeList";
-import { Box,Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function Notification() {
@@ -25,7 +25,7 @@ export default function Notification() {
         <Typography
           variant="h2"
           sx={{
-            fontSize: { xs: "2.2rem", sm: "2.8rem", md: "3.4rem", lg: "4.0rem" },
+            fontSize: { xs: "2.2rem", sm: "2.3rem", md: "3.0rem", lg: "4.0rem" },
             justifyContent: "center",
           }}> {/* mt: 0 にして調整 */}
           お知らせ一覧
