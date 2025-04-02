@@ -7,12 +7,12 @@ const descriptionText = `
 これを製作するにあたってモブの3Dモデルを作る人,モブを生み出す卵アイテムのイラストを作る人,モブのモデルを制御するプログラミングを書く人に別れ製作しました。  
 `;
 
-
+const files:string[] = ["/portfolio/minecraft/all.png","/portfolio/minecraft/chase.mp4","/portfolio/minecraft/inventory.png","/portfolio/minecraft/profile.png","/portfolio/minecraft/recover.mp4"]
 export default function MinecraftPage() {
   return (
     <>
       <ProjectCard
-        image="/portfolio/minecraft.png"
+        files={files}
         title="じゃりじゃりMod"
         description={descriptionText}
         chips={["Java", "Gradle"]}

@@ -7,11 +7,12 @@ const descriptionText = `
 謎の施設から無事に逃げ出せるかはあなた次第。ギミックを解きながら脱出を目指そう！  
 `;
 
+const images:string[] = ["/portfolio/escapeG.png"]
 export default function EscapeGPage() {
   return (
     <>
       <ProjectCard
-        image="/portfolio/escapeG.png"
+        images= {images}
         title="G社からの脱出"
         description={descriptionText}
         chips={["C#", "Unity"]}

@@ -80,10 +80,6 @@ function Header() {
         ease: "easeOut", // イージングを指定
       }}
 
-      // initial={{ opacity: 1 }}
-      // animate={{ opacity: scrollState ? 1 : 0 }}
-      // transition={{ duration: 0.5, ease: "easeInOut" }}
-
       style={{
         position: "fixed", // 固定
         top: 0,
