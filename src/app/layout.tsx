@@ -6,7 +6,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import Footer from "./component/layout/footer/footer";
 import theme from "./theme";
 
-const HEADER_HEIGHT = 125;  // ヘッダーの高さを定数化
+const HEADER_HEIGHT = 140;  // ヘッダーの高さを定数化
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
