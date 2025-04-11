@@ -4,7 +4,7 @@ import ProjectCard from "@/app/component/ProjectCard/ProjectCard"
 const descriptionText = `
 ## じゃりじゃりModのアップデート対応プロジェクト
 
-このModは、「じゃりじゃりMod」を最新バージョンの環境でも動作するように対応させたものです。  
+このModは、[じゃりじゃりMod](https://ghasts.blog.fc2.com/blog-entry-1059.html)を最新バージョンの環境でも動作するように対応させたものです。  
 主な機能としては、モブに砂利を与えるとHPと好感度が上昇し、逆にダメージを与えるとモブの色が変化する、といった仕様があります。
 
 ---

@@ -32,6 +32,13 @@ const descriptionText = `
 
 ---
 
+### 📎 プロジェクトリンク
+
+🔗 [GitHubリポジトリはこちら](https://github.com/sunshine-724/Escape-game)  
+🎮 [UnityRoomのリンクはこちら](https://unityroom.com/games/escapefromcompanyg)
+
+---
+
 ### 💬 感想
 
 初めて尽くしの中でも、チーム全体で協力しながら一つの作品を完成させることができたのはとても貴重な経験でした。  
@@ -39,7 +46,7 @@ Unity開発の土台を築けたことで、今後の制作にも大きく活か
 
 `;
 
-const files:string[] = ["/portfolio/escapeG.png"]
+const files:string[] = ["/portfolio/escapeG/title.png","/portfolio/escapeG/logo.png","/portfolio/escapeG/password.png","/portfolio/escapeG/quiz.png"]
 export default function EscapeGPage() {
   return (
     <>
