@@ -5,18 +5,12 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
-interface BlogData {
-  id: string;
-  title: string;
-  date: string;
-  content: string;
-}
+import {BlogDetail} from "@/types/blog"
 
 export default function BlogPost() {
   const params = useParams();
   const id = params ? params.id as string : undefined;
-  const [blog, setBlog] = useState<BlogData | null>(null);
+  const [blog, setBlog] = useState<BlogDetail | null>(null);
 
   useEffect(() => {
     if (!id) return;

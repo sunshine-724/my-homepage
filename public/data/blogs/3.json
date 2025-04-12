@@ -1,6 +1,18 @@
 {
     "id": "3",
-    "title": "Advanced TypeScript with Decorators",
-    "date": "2025-01-31",
-    "content": "# TypeScriptデコレータの高度な活用法\n\nTypeScriptのデコレータは、クラス、メソッド、プロパティ、パラメータに注釈を追加し、その振る舞いを拡張するための強力な機能です。本記事では、特にAngularアプリケーション開発におけるデコレータの応用例を詳しく解説します。\n\n## 内容\n- デコレータの基本概念\n- クラスデコレータの実装例\n- メソッドデコレータによる振る舞いの拡張\n- プロパティデコレータの活用\n- リフレクションメタデータAPIとの連携\n\nサンプルコードとパターンを通じて、より保守性の高いTypeScriptコードの書き方を学びましょう。"
-}
+    "title": "Next.js 14の新機能とパフォーマンス改善",
+    "date": "2025-04-10",
+    "chips": [
+      "Next.js",
+      "React",
+      "SSR",
+      "Vercel",
+      "Performance"
+    ],
+    "content": "Next.js 14では、Server ComponentsとParallel Routesの強化、さらに改善されたImage Optimizationなど、多くの新機能が追加されました。本記事では、これらの機能を実際のプロジェクトに適用する方法と、Web Vitalsスコアを向上させるための最適化テクニックを紹介します。特に、Next.js 14で導入されたTurbopackの活用法と、従来のWebpackとの違いについて詳細に解説します。実際のパフォーマンス測定結果も交えながら、最新のNext.jsでの開発手法を学びましょう。",
+    "attachments": {
+      "label": "パフォーマンス比較チャート",
+      "url": "/attachments/nextjs14-performance.pdf"
+    },
+    "updatedAt": "2025-04-11"
+  }

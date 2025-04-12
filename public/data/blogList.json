@@ -1,702 +1,120 @@
 [
   {
     "id": "1",
-    "title": "Getting Started with Python Automation",
-    "date": "2025-01-04",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog1.json"
+    "title": "React 18の新機能と実装ガイド",
+    "date": "2025-03-28",
+    "chips": [
+      "React",
+      "JavaScript",
+      "Frontend",
+      "Hooks"
+    ]
   },
   {
     "id": "2",
-    "title": "Implementing RESTful APIs in Node.js",
-    "date": "2025-01-10",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog2.json"
+    "title": "TypeScriptで始める型安全な開発",
+    "date": "2025-04-05",
+    "chips": [
+      "TypeScript",
+      "JavaScript",
+      "静的型付け",
+      "VSCode"
+    ]
   },
   {
     "id": "3",
-    "title": "Advanced TypeScript with Decorators",
-    "date": "2025-01-31",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog3.json"
+    "title": "Next.js 14の新機能とパフォーマンス改善",
+    "date": "2025-04-10",
+    "chips": [
+      "Next.js",
+      "React",
+      "SSR",
+      "Vercel",
+      "Performance"
+    ]
   },
   {
     "id": "4",
-    "title": "Mastering React Hooks for Frontend",
-    "date": "2025-02-06",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog4.json"
+    "title": "Docker入門：環境構築からデプロイまで",
+    "date": "2025-04-12",
+    "chips": [
+      "Docker",
+      "Kubernetes",
+      "コンテナ",
+      "DevOps",
+      "CI/CD"
+    ]
   },
   {
     "id": "5",
-    "title": "Exploring Serverless Architecture on AWS",
-    "date": "2025-02-28",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog5.json"
+    "title": "Go言語で作るマイクロサービス",
+    "date": "2025-04-08",
+    "chips": [
+      "Go",
+      "マイクロサービス",
+      "gRPC",
+      "REST API",
+      "Docker"
+    ]
   },
   {
     "id": "6",
-    "title": "Blog 6",
-    "date": "2025-03-02",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog6.json"
+    "title": "GraphQLとApollo Clientの実践的活用法",
+    "date": "2025-03-15",
+    "chips": [
+      "GraphQL",
+      "Apollo",
+      "React",
+      "API",
+      "フロントエンド"
+    ]
   },
   {
     "id": "7",
-    "title": "Blog 7",
-    "date": "2025-03-31",
-    "chips": ["Node.js", "Express"],
-    "file": "data/blog/blog7.json"
+    "title": "AWS Lambdaによるサーバーレスアプリケーション開発",
+    "date": "2025-04-03",
+    "chips": [
+      "AWS",
+      "Lambda",
+      "サーバーレス",
+      "Node.js",
+      "DynamoDB"
+    ]
   },
   {
     "id": "8",
-    "title": "Blog 8",
-    "date": "2025-01-12",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog8.json"
+    "title": "Pythonによる機械学習モデルの構築と展開",
+    "date": "2025-04-11",
+    "chips": [
+      "Python",
+      "TensorFlow",
+      "機械学習",
+      "データサイエンス",
+      "Jupyter"
+    ]
   },
   {
     "id": "9",
-    "title": "Blog 9",
-    "date": "2025-01-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog9.json"
+    "title": "Rustの基礎から応用：パフォーマンスとメモリ安全性",
+    "date": "2025-03-22",
+    "chips": [
+      "Rust",
+      "WebAssembly",
+      "システムプログラミング",
+      "パフォーマンス"
+    ]
   },
   {
     "id": "10",
-    "title": "Blog 10",
-    "date": "2025-02-14",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog10.json"
-  },
-  {
-    "id": "11",
-    "title": "Blog 11",
-    "date": "2025-01-21",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog11.json"
-  },
-  {
-    "id": "12",
-    "title": "Blog 12",
-    "date": "2025-01-03",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog12.json"
-  },
-  {
-    "id": "13",
-    "title": "Blog 13",
-    "date": "2025-03-19",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog13.json"
-  },
-  {
-    "id": "14",
-    "title": "Blog 14",
-    "date": "2025-03-07",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog14.json"
-  },
-  {
-    "id": "15",
-    "title": "Blog 15",
-    "date": "2025-02-18",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog15.json"
-  },
-  {
-    "id": "16",
-    "title": "Blog 16",
-    "date": "2025-02-02",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog16.json"
-  },
-  {
-    "id": "17",
-    "title": "Blog 17",
-    "date": "2025-03-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog17.json"
-  },
-  {
-    "id": "18",
-    "title": "Blog 18",
-    "date": "2025-01-29",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog18.json"
-  },
-  {
-    "id": "19",
-    "title": "Blog 19",
-    "date": "2025-01-02",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog19.json"
-  },
-  {
-    "id": "20",
-    "title": "Blog 20",
-    "date": "2025-03-13",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog20.json"
-  },
-  {
-    "id": "21",
-    "title": "Blog 21",
-    "date": "2025-01-04",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog21.json"
-  },
-  {
-    "id": "22",
-    "title": "Blog 22",
-    "date": "2025-01-10",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog22.json"
-  },
-  {
-    "id": "23",
-    "title": "Blog 23",
-    "date": "2025-01-31",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog23.json"
-  },
-  {
-    "id": "24",
-    "title": "Blog 24",
-    "date": "2025-02-06",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog24.json"
-  },
-  {
-    "id": "25",
-    "title": "Blog 25",
-    "date": "2025-02-28",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog25.json"
-  },
-  {
-    "id": "26",
-    "title": "Blog 26",
-    "date": "2025-03-02",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog26.json"
-  },
-  {
-    "id": "27",
-    "title": "Blog 27",
-    "date": "2025-03-31",
-    "chips": ["Node.js", "Express"],
-    "file": "data/blog/blog27.json"
-  },
-  {
-    "id": "28",
-    "title": "Blog 28",
-    "date": "2025-01-12",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog28.json"
-  },
-  {
-    "id": "29",
-    "title": "Blog 29",
-    "date": "2025-01-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog29.json"
-  },
-  {
-    "id": "30",
-    "title": "Blog 30",
-    "date": "2025-02-14",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog30.json"
-  },
-  {
-    "id": "31",
-    "title": "Blog 31",
-    "date": "2025-01-21",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog31.json"
-  },
-  {
-    "id": "32",
-    "title": "Blog 32",
-    "date": "2025-01-03",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog32.json"
-  },
-  {
-    "id": "33",
-    "title": "Blog 33",
-    "date": "2025-03-19",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog33.json"
-  },
-  {
-    "id": "34",
-    "title": "Blog 34",
-    "date": "2025-03-07",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog34.json"
-  },
-  {
-    "id": "35",
-    "title": "Blog 35",
-    "date": "2025-02-18",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog35.json"
-  },
-  {
-    "id": "36",
-    "title": "Blog 36",
-    "date": "2025-02-02",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog36.json"
-  },
-  {
-    "id": "37",
-    "title": "Blog 37",
-    "date": "2025-03-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog37.json"
-  },
-  {
-    "id": "38",
-    "title": "Blog 38",
-    "date": "2025-01-29",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog38.json"
-  },
-  {
-    "id": "39",
-    "title": "Blog 39",
-    "date": "2025-01-02",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog39.json"
-  },
-  {
-    "id": "40",
-    "title": "Blog 40",
-    "date": "2025-03-13",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog40.json"
-  },
-  {
-    "id": "41",
-    "title": "Blog 41",
-    "date": "2025-01-04",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog41.json"
-  },
-  {
-    "id": "42",
-    "title": "Blog 42",
-    "date": "2025-01-10",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog42.json"
-  },
-  {
-    "id": "43",
-    "title": "Blog 43",
-    "date": "2025-01-31",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog43.json"
-  },
-  {
-    "id": "44",
-    "title": "Blog 44",
-    "date": "2025-02-06",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog44.json"
-  },
-  {
-    "id": "45",
-    "title": "Blog 45",
-    "date": "2025-02-28",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog45.json"
-  },
-  {
-    "id": "46",
-    "title": "Blog 46",
-    "date": "2025-03-02",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog46.json"
-  },
-  {
-    "id": "47",
-    "title": "Blog 47",
-    "date": "2025-03-31",
-    "chips": ["Node.js", "Express"],
-    "file": "data/blog/blog47.json"
-  },
-  {
-    "id": "48",
-    "title": "Blog 48",
-    "date": "2025-01-12",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog48.json"
-  },
-  {
-    "id": "49",
-    "title": "Blog 49",
-    "date": "2025-01-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog49.json"
-  },
-  {
-    "id": "50",
-    "title": "Blog 50",
-    "date": "2025-02-14",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog50.json"
-  },
-  {
-    "id": "51",
-    "title": "Blog 51",
-    "date": "2025-01-21",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog51.json"
-  },
-  {
-    "id": "52",
-    "title": "Blog 52",
-    "date": "2025-01-03",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog52.json"
-  },
-  {
-    "id": "53",
-    "title": "Blog 53",
-    "date": "2025-03-19",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog53.json"
-  },
-  {
-    "id": "54",
-    "title": "Blog 54",
-    "date": "2025-03-07",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog54.json"
-  },
-  {
-    "id": "55",
-    "title": "Blog 55",
-    "date": "2025-02-18",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog55.json"
-  },
-  {
-    "id": "56",
-    "title": "Blog 56",
-    "date": "2025-02-02",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog56.json"
-  },
-  {
-    "id": "57",
-    "title": "Blog 57",
-    "date": "2025-03-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog57.json"
-  },
-  {
-    "id": "58",
-    "title": "Blog 58",
-    "date": "2025-01-29",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog58.json"
-  },
-  {
-    "id": "59",
-    "title": "Blog 59",
-    "date": "2025-01-02",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog59.json"
-  },
-  {
-    "id": "60",
-    "title": "Blog 60",
-    "date": "2025-03-13",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog60.json"
-  },
-  {
-    "id": "61",
-    "title": "Blog 61",
-    "date": "2025-01-04",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog61.json"
-  },
-  {
-    "id": "62",
-    "title": "Blog 62",
-    "date": "2025-01-10",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog62.json"
-  },
-  {
-    "id": "63",
-    "title": "Blog 63",
-    "date": "2025-01-31",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog63.json"
-  },
-  {
-    "id": "64",
-    "title": "Blog 64",
-    "date": "2025-02-06",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog64.json"
-  },
-  {
-    "id": "65",
-    "title": "Blog 65",
-    "date": "2025-02-28",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog65.json"
-  },
-  {
-    "id": "66",
-    "title": "Blog 66",
-    "date": "2025-03-02",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog66.json"
-  },
-  {
-    "id": "67",
-    "title": "Blog 67",
-    "date": "2025-03-31",
-    "chips": ["Node.js", "Express"],
-    "file": "data/blog/blog67.json"
-  },
-  {
-    "id": "68",
-    "title": "Blog 68",
-    "date": "2025-01-12",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog68.json"
-  },
-  {
-    "id": "69",
-    "title": "Blog 69",
-    "date": "2025-01-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog69.json"
-  },
-  {
-    "id": "70",
-    "title": "Blog 70",
-    "date": "2025-02-14",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog70.json"
-  },
-  {
-    "id": "71",
-    "title": "Blog 71",
-    "date": "2025-01-21",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog71.json"
-  },
-  {
-    "id": "72",
-    "title": "Blog 72",
-    "date": "2025-01-03",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog72.json"
-  },
-  {
-    "id": "73",
-    "title": "Blog 73",
-    "date": "2025-03-19",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog73.json"
-  },
-  {
-    "id": "74",
-    "title": "Blog 74",
-    "date": "2025-03-07",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog74.json"
-  },
-  {
-    "id": "75",
-    "title": "Blog 75",
-    "date": "2025-02-18",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog75.json"
-  },
-  {
-    "id": "76",
-    "title": "Blog 76",
-    "date": "2025-02-02",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog76.json"
-  },
-  {
-    "id": "77",
-    "title": "Blog 77",
-    "date": "2025-03-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog77.json"
-  },
-  {
-    "id": "78",
-    "title": "Blog 78",
-    "date": "2025-01-29",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog78.json"
-  },
-  {
-    "id": "79",
-    "title": "Blog 79",
-    "date": "2025-01-02",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog79.json"
-  },
-  {
-    "id": "80",
-    "title": "Blog 80",
-    "date": "2025-03-13",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog80.json"
-  },
-  {
-    "id": "81",
-    "title": "Blog 81",
-    "date": "2025-01-04",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog81.json"
-  },
-  {
-    "id": "82",
-    "title": "Blog 82",
-    "date": "2025-01-10",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog82.json"
-  },
-  {
-    "id": "83",
-    "title": "Blog 83",
-    "date": "2025-01-31",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog83.json"
-  },
-  {
-    "id": "84",
-    "title": "Blog 84",
-    "date": "2025-02-06",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog84.json"
-  },
-  {
-    "id": "85",
-    "title": "Blog 85",
-    "date": "2025-02-28",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog85.json"
-  },
-  {
-    "id": "86",
-    "title": "Blog 86",
-    "date": "2025-03-02",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog86.json"
-  },
-  {
-    "id": "87",
-    "title": "Blog 87",
-    "date": "2025-03-31",
-    "chips": ["Node.js", "Express"],
-    "file": "data/blog/blog87.json"
-  },
-  {
-    "id": "88",
-    "title": "Blog 88",
-    "date": "2025-01-12",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog88.json"
-  },
-  {
-    "id": "89",
-    "title": "Blog 89",
-    "date": "2025-01-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog89.json"
-  },
-  {
-    "id": "90",
-    "title": "Blog 90",
-    "date": "2025-02-14",
-    "chips": ["Vue.js", "FrontEnd"],
-    "file": "data/blog/blog90.json"
-  },
-  {
-    "id": "91",
-    "title": "Blog 91",
-    "date": "2025-01-21",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog91.json"
-  },
-  {
-    "id": "92",
-    "title": "Blog 92",
-    "date": "2025-01-03",
-    "chips": ["PHP", "Laravel"],
-    "file": "data/blog/blog92.json"
-  },
-  {
-    "id": "93",
-    "title": "Blog 93",
-    "date": "2025-03-19",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog93.json"
-  },
-  {
-    "id": "94",
-    "title": "Blog 94",
-    "date": "2025-03-07",
-    "chips": ["C#", ".NET"],
-    "file": "data/blog/blog94.json"
-  },
-  {
-    "id": "95",
-    "title": "Blog 95",
-    "date": "2025-02-18",
-    "chips": ["TypeScript", "Angular"],
-    "file": "data/blog/blog95.json"
-  },
-  {
-    "id": "96",
-    "title": "Blog 96",
-    "date": "2025-02-02",
-    "chips": ["Rust", "WASM"],
-    "file": "data/blog/blog96.json"
-  },
-  {
-    "id": "97",
-    "title": "Blog 97",
-    "date": "2025-03-25",
-    "chips": ["JavaScript", "React"],
-    "file": "data/blog/blog97.json"
-  },
-  {
-    "id": "98",
-    "title": "Blog 98",
-    "date": "2025-01-29",
-    "chips": ["Python", "Flask"],
-    "file": "data/blog/blog98.json"
-  },
-  {
-    "id": "99",
-    "title": "Blog 99",
-    "date": "2025-01-02",
-    "chips": ["Go", "Kubernetes"],
-    "file": "data/blog/blog99.json"
-  },
-  {
-    "id": "100",
-    "title": "Blog 100",
-    "date": "2025-03-13",
-    "chips": ["Database", "SQL"],
-    "file": "data/blog/blog100.json"
+    "title": "Flutter 4.0で実現するクロスプラットフォーム開発",
+    "date": "2025-04-07",
+    "chips": [
+      "Flutter",
+      "Dart",
+      "モバイル開発",
+      "iOS",
+      "Android",
+      "UI/UX"
+    ]
   }
 ]
