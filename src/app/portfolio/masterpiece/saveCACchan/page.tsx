@@ -25,18 +25,18 @@ const descriptionText = `
 
 ---
 
+### ⏳ 制作期間
+
+**2024年8月〜2024年10月（約3ヶ月）**
+
+---
+
 ### 👥 制作体制
 
 - **プログラマー：2人（自分含む）**
 - **プランナー / ディレクター：1人**
 - **イラスト：1人**
 - **サウンド：1人**
-
----
-
-### ⏳ 制作期間
-
-**2024年8月〜2024年10月（約3ヶ月）**
 
 ---
 
@@ -67,7 +67,7 @@ const descriptionText = `
 Unity×協力アクションとして、チームの連携が試された良い経験になりました！
 `;
 
-const files:string[] = ["/portfolio/saveCACchan.png"];
+const files:string[] = ["/portfolio/saveCACchan/saveCACchan.png","/portfolio/saveCACchan/defeatEnemy.mp4","/portfolio/saveCACchan/installAndDefeatEnemy.mp4"];
 
 
 export default function SaveCACchanPage() {
