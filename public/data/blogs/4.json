@@ -1,6 +1,14 @@
 {
     "id": "4",
-    "title": "Mastering React Hooks for Frontend",
-    "date": "2025-02-06",
-    "content": "# フロントエンド開発のためのReact Hooks完全攻略\n\nReact Hooksの登場により、関数コンポーネントでも状態管理や副作用の処理が可能になりました。本記事では基本的なHooksから応用テクニックまで、実践的な使い方を解説します。\n\n## 主要トピック\n- useState、useEffectの基本と応用\n- useContextによるグローバル状態管理\n- useReducerを使った複雑な状態ロジックの管理\n- カスタムHooksの設計と再利用パターン\n- パフォーマンス最適化テクニック\n\n実際のアプリケーション開発に即したコード例で、React Hooksのマスターを目指しましょう。"
-}
+    "title": "Docker入門：環境構築からデプロイまで",
+    "date": "2025-04-12",
+    "chips": [
+      "Docker",
+      "Kubernetes",
+      "コンテナ",
+      "DevOps",
+      "CI/CD"
+    ],
+    "content": "Dockerを使用したコンテナ化の基本から、本番環境へのデプロイまでを段階的に解説します。Dockerfileの書き方、マルチステージビルド、Docker Composeを使った複数コンテナの管理、ネットワーキングなどの基本概念を説明します。さらに、CI/CDパイプラインにDockerを統合する方法や、Kubernetes環境でのコンテナオーケストレーションについても触れ、実践的なコンテナ戦略を学ぶことができます。開発環境と本番環境の一貫性を保つためのベストプラクティスも紹介します。",
+    "updatedAt": "2025-04-12"
+  }
