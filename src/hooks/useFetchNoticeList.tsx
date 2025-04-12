@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Notice } from "../../types/notice";
+import { Notification } from "../types/notification";
 
-export default function useFetchNoticeList(): Notice[] {
-  const [notificationList, setNotificationList] = useState<Notice[]>([]);
+export default function useFetchNoticeList(): Notification[] {
+  const [notificationList, setNotificationList] = useState<Notification[]>([]);
 
   useEffect(() => {
     const fetchNotificationList = async () => {

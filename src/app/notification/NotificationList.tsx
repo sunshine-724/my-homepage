@@ -1,33 +1,39 @@
+"use client"
 import { useState } from "react";
 import { Card, CardContent, Typography, Button, Collapse, Box } from "@mui/material";
-import { Notice } from "@/types/notice";
-import router from "next/router";
+import { Notification } from "@/types/notification";
+import router, { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 //React.FCの型ジェネリクスでは配列の型を指定できないので、NoticeListPropsを作成
-interface NoticeListProps {
-  notices: Notice[];
+interface NotificationListProps {
+  notifications: Notification[];
 }
 
-const NoticeList: React.FC<NoticeListProps> = ({ notices }) => {
+const NotificationList: React.FC<NotificationListProps> = ({ notifications }) => {
+  const router = useRouter();
   const [expanded, setExpanded] = useState(false);
-  const visibleNotices = expanded ? notices : notices.slice(0, 5); //最初の5件を表示するかどうか
+  const visibleNotices = expanded ? notifications : notifications.slice(0, 5); //最初の5件を表示するかどうか
+
+  const handleClick = (id: number) => {
+    router.push(`/notification/${id}`)
+  }
 
   return (
     <>
-      {visibleNotices.map((notice, index) => (
-        <Card key={notice.id} sx={{ borderLeft: "5px solid", borderColor: importanceColor[notice.importance], mb: 1 }}>
+      {visibleNotices.map((notification, index) => (
+        <Card key={notification.id} sx={{ borderLeft: "5px solid", borderColor: importanceColor[notification.importance], mb: 1 }}>
           <CardContent>
             <Button
-              onClick={() => router.push(`/notification/${notice.id}`)}
+              onClick={() => router.push(`/notification/${notification.id}`)}
               variant="text"
               sx={{ textTransform: "none", color: "inherit", width: "100%", height: "100%", justifyContent: "flex-start" }}
             >
               <Typography variant="h6">
-                {notice.importance === "red" && "🔴"}
-                {notice.importance === "yellow" && "🟡"}
-                {notice.importance === "green" && "🟢"}
-                {notice.title}
+                {notification.importance === "red" && "🔴"}
+                {notification.importance === "yellow" && "🟡"}
+                {notification.importance === "green" && "🟢"}
+                {notification.title}
               </Typography>
               <ArrowForwardIosIcon />
             </Button>
@@ -37,19 +43,19 @@ const NoticeList: React.FC<NoticeListProps> = ({ notices }) => {
 
       {/* 追加の項目をスライド表示 */}
       <Collapse in={expanded}>
-        {notices.slice(5).map((notice) => (
-          <Card key={notice.id} sx={{ borderLeft: "5px solid", borderColor: importanceColor[notice.importance], mb: 1 }}>
+        {notifications.slice(5).map((notification) => (
+          <Card key={notification.id} sx={{ borderLeft: "5px solid", borderColor: importanceColor[notification.importance], mb: 1 }}>
             <CardContent>
               <Button
-                onClick={() => router.push(`/notification/${notice.id}`)}
+                onClick={() => handleClick(notification.id)}
                 variant="text"
                 sx={{ textTransform: "none", color: "inherit", width: "100%", height: "100%", justifyContent: "flex-start" }}
               >
                 <Typography variant="h6">
-                  {notice.importance === "red" && "🔴"}
-                  {notice.importance === "yellow" && "🟡"}
-                  {notice.importance === "green" && "🟢"}
-                  {notice.title}
+                  {notification.importance === "red" && "🔴"}
+                  {notification.importance === "yellow" && "🟡"}
+                  {notification.importance === "green" && "🟢"}
+                  {notification.title}
                 </Typography>
                 <ArrowForwardIosIcon />
               </Button>
@@ -72,4 +78,4 @@ const importanceColor = {
   green: "#81c784",
 };
 
-export default NoticeList;
+export default NotificationList;
