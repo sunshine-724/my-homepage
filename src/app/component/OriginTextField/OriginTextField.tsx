@@ -34,6 +34,7 @@ export default function OriginTextField({ title, boxWidth, onChange }: OriginTex
                 </Typography>
                 <TextField
                     sx={{ width: boxWidth }}
+                    multiline //複数行を許可する
                     value={inputValue}
                     onChange={handleInputChange}
                 />
