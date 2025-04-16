@@ -3,7 +3,7 @@ import OriginTextField from "@/app/component/OriginTextField/OriginTextField";
 import FileIcon from "@/app/component/FileIcon/FileIcon"
 import CancelIcon from '@mui/icons-material/Cancel';
 import DownloadIcon from '@mui/icons-material/Download';
-import { Box, Button, Collapse,Typography } from "@mui/material";
+import { Box, Button, Collapse, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function MakeBlogPage() {
@@ -102,7 +102,10 @@ export default function MakeBlogPage() {
                 >
                     <Typography variant="h4">Attachments</Typography>
                     <Collapse in={!hasFile}>
+                        <Typography variant="body2">アップロード可能なファイル形式</Typography>
+                        <Typography variant="body2">.pdf, .png, .jpg, .jpeg</Typography>
                         <input
+                            multiple
                             type="file"
                             accept=".pdf,.png,.jpg,.jpeg" //バリデーション
                             // multiple //複数ファイルのアップロード
@@ -112,22 +115,29 @@ export default function MakeBlogPage() {
                     <Collapse in={hasFile}>
                         <Box>
                             {hasFile && attachmentFiles && attachmentFiles.length > 0 ? (
-                                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', alignContent: 'center' }}>
                                     {attachmentFiles.map((file, index) => (
-                                        <Box key={index} sx={{ marginBottom: '8px' }}>
-                                            <Button onClick={handleButton}>
-                                                <FileIcon fileName={file.name}></FileIcon>
-                                            </Button>
-                                            <Button onClick={handleButton}>
-                                                <Typography variant="body2">{file.name}</Typography>
-                                            </Button>
-                                            <Button onClick={handleButton}>
-                                                <DownloadIcon />
-                                            </Button>
-                                            <Button onClick={handleButton}>
-                                                <CancelIcon />
-                                            </Button>
+                                        <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+                                            {/* 左寄せ：PDFアイコン */}
+                                            <Box>
+                                                <Button onClick={handleButton}>
+                                                    <FileIcon fileName={file.name} />
+                                                </Button>
+                                            </Box>
+                                            {/* 右寄せ：名前、ダウンロード、キャンセル */}
+                                            <Box sx={{ display: 'flex', gap: 1 }}>
+                                                <Button onClick={handleButton}>
+                                                    <Typography variant="h6">{file.name}</Typography>
+                                                </Button>
+                                                <Button onClick={handleButton}>
+                                                    <DownloadIcon />
+                                                </Button>
+                                                <Button onClick={handleButton}>
+                                                    <CancelIcon />
+                                                </Button>
+                                            </Box>
                                         </Box>
+
                                     ))}
                                 </Box>
                             ) : (
@@ -138,6 +148,5 @@ export default function MakeBlogPage() {
                 </Box>
             </Box>
         </>
-
     );
 }
