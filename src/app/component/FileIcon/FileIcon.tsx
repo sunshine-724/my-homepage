@@ -31,7 +31,7 @@ interface FileDisplayProps {
 
 const FileDisplay: React.FC<FileDisplayProps> = ({ fileName }) => {
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center'}}>
             <FileIcon fileName={fileName} />
         </Box>
     );
