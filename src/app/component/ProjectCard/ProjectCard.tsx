@@ -79,7 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ files = [], title, descriptio
                                         muted
                                         loop={true}
                                         style={{
-                                            maxWidth: "50%",
+                                            Width: "50%",
                                             height: "auto",
                                             display: "block",
                                             margin: "0 auto",
