@@ -22,7 +22,7 @@ const PortfolioPage = () => {
               display: "flex",
               justifyContent: index % 2 === 0 ? "flex-start" : "flex-end", // 左右交互に配置
               width: "80%",
-              Width: "600px" // レイアウトが崩れないように調整
+              maxWidth: "600px" // レイアウトが崩れないように調整
             }}
           >
             <IconButtonWithTitle
