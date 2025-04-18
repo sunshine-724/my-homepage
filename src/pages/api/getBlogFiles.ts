@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
-import { json } from "stream/consumers";
 
 //public/data/blog ディレクトリ内のファイルリストを取得する
 export default function handler(req: NextApiRequest, res: NextApiResponse) {

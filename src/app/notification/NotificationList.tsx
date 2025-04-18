@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
-import { Card, CardContent, Typography, Button, Collapse, Box } from "@mui/material";
+import { Card, CardContent, Typography, Button, Collapse } from "@mui/material";
 import { Notification } from "@/types/notification";
-import router, { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 //React.FCの型ジェネリクスでは配列の型を指定できないので、NoticeListPropsを作成

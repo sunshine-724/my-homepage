@@ -1,5 +1,5 @@
 "use client"
-import { Box, ThemeProvider } from "@mui/material";
+import { Box } from "@mui/material";
 import InfoCardWithToggleButton from "@/app/component/InfoCard/InfoCardWithToggleButton";
 
 export default function Introduction() {

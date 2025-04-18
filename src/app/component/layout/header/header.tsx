@@ -13,7 +13,6 @@ import HeaderAnimatedButton from './HeaderAnimatedButton';
 
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Collapse } from '@mui/material';
 
 const pages = ['ポートフォリオ', '自己紹介', 'ブログ', 'お問い合わせ', 'お知らせ'];
 

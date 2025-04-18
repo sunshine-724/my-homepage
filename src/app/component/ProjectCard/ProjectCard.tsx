@@ -1,12 +1,11 @@
 "use client"
-import { Card, CardActionArea, CardMedia, CardContent, Typography, Chip, Box } from "@mui/material";
+import { Card, CardContent, Typography, Chip, Box } from "@mui/material";
 import React, { useState } from "react";
 import { useChipColors } from "./useChipColors"; // フックをインポート
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Swiper as SwiperClass } from "swiper"; // 型として使う
-import { Swiper, SwiperProps, SwiperSlide } from "swiper/react"; // コンポーネントとして使う
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+// 型として使う
+// コンポーネントとして使う
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

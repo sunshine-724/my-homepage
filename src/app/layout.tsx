@@ -2,9 +2,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./component/layout/header/header";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box } from "@mui/material";
 import Footer from "./component/layout/footer/footer";
-import theme from "./theme";
 
 const HEADER_HEIGHT = 140;  // ヘッダーの高さを定数化
 

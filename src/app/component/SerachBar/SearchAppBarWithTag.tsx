@@ -1,7 +1,5 @@
-import { AppBar, Toolbar, InputBase, IconButton, ToggleButton, ToggleButtonGroup, Chip } from "@mui/material";
+import { Toolbar, InputBase, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Collapse from "@mui/material/Collapse";
 import { useState } from "react";
 
 interface SearchAppBarWithTagProps {
