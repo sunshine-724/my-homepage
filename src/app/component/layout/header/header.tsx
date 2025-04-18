@@ -20,9 +20,6 @@ function Header() {
   const router = useRouter();
   const { scrollY } = useScroll(); //これはreactの機能ではなく、framer-motionの機能なので、描画を更新したいならuseEffectの中で使う必要がある
 
-
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-
   const [scrollState, setScrollState] = useState<boolean>(true); //このヘッダの状態を管理
   const [lastScrollY, setLastScrollY] = useState<number>(0); //最後のスクロール位置を管理
 
@@ -64,7 +61,6 @@ function Header() {
         alert("存在しないページです")
         console.error("エラーです")
     }
-    setAnchorElNav(null);
   };
 
   return (

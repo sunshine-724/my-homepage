@@ -7,7 +7,7 @@ interface SearchAppBarProps {
 }
 
 const SearchAppBar: React.FC<SearchAppBarProps> = ({ onSearch }) => {
-  const [expanded, setExpanded] = useState(false);
+  // const [expanded, setExpanded] = useState(false);
 
   return (
     <Toolbar

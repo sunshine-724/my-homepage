@@ -20,8 +20,6 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ files = [], title, description, chips }) => {
     const { getChipColor } = useChipColors(); // フックから関数を取得
-    const DEFAULT_SLIDE_DELAY = 5000; // デフォルト 5秒
-    const [slideDelay, setSlideDelay] = useState(DEFAULT_SLIDE_DELAY);
 
     return (
         <Card sx={{ minWidth: "100%", maxWidth: "100%" }}>

@@ -21,7 +21,7 @@ const NotificationList: React.FC<NotificationListProps> = ({ notifications }) =>
 
   return (
     <>
-      {visibleNotices.map((notification, index) => (
+      {visibleNotices.map((notification) => (
         <Card key={notification.id} sx={{ borderLeft: "5px solid", borderColor: importanceColor[notification.importance], mb: 1 }}>
           <CardContent>
             <Button

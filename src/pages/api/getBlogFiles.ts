@@ -11,6 +11,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const jsonFiles = files.filter((file) => file.endsWith(".json"));
     res.status(200).json(jsonFiles);
   } catch (error) {
+    console.error(error); // エラー内容をログに出力
     res.status(500).json({ error: "Unable to read directory" });
   }
 }
