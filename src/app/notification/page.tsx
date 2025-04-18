@@ -1,9 +1,9 @@
 "use client";
-import SearchAppBar from "@/app/component/SerachBar/SearchAppBar";
+// import SearchAppBar from "@/app/component/SerachBar/SearchAppBar";
 import useFetchNoticeList from "@/hooks/useFetchNoticeList";
 import NoticeList from "./NotificationList";
 import { Box, Typography } from "@mui/material";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Notification() {
   // const [searchQuery, setSearchQuery] = useState(""); //検索する文字列

@@ -1,6 +1,6 @@
 import { Toolbar, InputBase, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
+// import { useState } from "react";
 
 interface SearchAppBarProps {
   onSearch: (query: string) => void;
