@@ -1,13 +1,11 @@
 import { Toolbar, InputBase, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
 
 interface SearchAppBarWithTagProps {
   onSearch: (query: string) => void;
 }
 
 const SearchAppBarWithTag: React.FC<SearchAppBarWithTagProps> = ({ onSearch }) => {
-  const [expanded, setExpanded] = useState(false);
   
   return (
     <Toolbar

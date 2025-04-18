@@ -1,9 +1,9 @@
 "use client"
 import { Box, Button, Typography } from "@mui/material";
 import ProjectCard from "../component/ProjectCard/ProjectCard"
-import SearchAppBar from "../component/SerachBar/SearchAppBar";
+// import SearchAppBar from "../component/SerachBar/SearchAppBar";
 import useFetchBlogList from "@/hooks/useFetchBlogList";
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 const BlogPage = () => {

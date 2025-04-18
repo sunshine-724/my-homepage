@@ -1,6 +1,6 @@
 "use client"
 import { Card, CardContent, Typography, Chip, Box } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { useChipColors } from "./useChipColors"; // フックをインポート
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";

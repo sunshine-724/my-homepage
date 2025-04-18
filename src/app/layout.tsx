@@ -1,5 +1,4 @@
 //このtsxファイルはこのファイル以下の階層のページにおける共通レイアウトを決める
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./component/layout/header/header";
 import { Box } from "@mui/material";
