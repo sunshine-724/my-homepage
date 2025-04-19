@@ -11,9 +11,15 @@ interface MediaSwiperProps {
     files: string[];
     defaultDelay?: number;
     title?: string;
+    mediaStyle?: React.CSSProperties;
 }
 
-const MediaSwiper: React.FC<MediaSwiperProps> = ({ files, defaultDelay = 5000, title = "" }) => {
+const MediaSwiper: React.FC<MediaSwiperProps> = ({
+    files,
+    defaultDelay = 5000,
+    title = "",
+    mediaStyle = {},
+}) => {
     const [slideDelay, setSlideDelay] = useState(defaultDelay);
 
     return (
@@ -54,11 +60,12 @@ const MediaSwiper: React.FC<MediaSwiperProps> = ({ files, defaultDelay = 5000, t
                                 muted
                                 loop
                                 style={{
-                                    maxWidth: "50%",
-                                    height: "auto",
                                     display: "block",
                                     margin: "0 auto",
                                     borderRadius: "10px",
+                                    objectFit: "contain",
+                                    aspectRatio: "16 / 9", // 必要に応じて変更可能
+                                    ...mediaStyle,
                                 }}
                             />
                         ) : (
@@ -66,12 +73,10 @@ const MediaSwiper: React.FC<MediaSwiperProps> = ({ files, defaultDelay = 5000, t
                                 src={file}
                                 alt={`${title} ${index + 1}`}
                                 style={{
-                                    maxWidth: "50%",
-                                    maxHeight: "20%",
-                                    height: "auto",
                                     display: "block",
                                     margin: "0 auto",
-                                    borderRadius: "10px"
+                                    borderRadius: "10px",
+                                    ...mediaStyle,
                                 }}
                             />
                         )}
@@ -81,5 +86,4 @@ const MediaSwiper: React.FC<MediaSwiperProps> = ({ files, defaultDelay = 5000, t
         </Swiper>
     );
 };
-
 export default MediaSwiper;

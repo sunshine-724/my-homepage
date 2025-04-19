@@ -1,5 +1,6 @@
 "use client"
 import { Box } from "@mui/material";
+import MediaSwiper from "@/app/component/ProjectCard/MediaSwiper";
 import InfoCardWithToggleButton from "@/app/component/InfoCard/InfoCardWithToggleButton";
 
 export default function Introduction() {
@@ -21,6 +22,8 @@ export default function Introduction() {
   const grade = (currentMonth - startMonth < 0) ? (currentYear - yearOFAdmission) : (currentYear - yearOFAdmission + 1)
 
   const yearsOfExperience = currentYear - 2023 + 1;
+
+  const files: string[] = ["introduction/picture.png", "introduction/picture2.png", "introduction/picture3.jpg", "introduction/picture4.jpg", "introduction/picture5.png"];
 
   const introText = `
 年齢:${age}歳  
@@ -175,6 +178,20 @@ Nightcore
           flexDirection: "column",
           alignItems: "center",
         }}>
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "500px",
+          }}
+        >
+          <MediaSwiper files={files} mediaStyle={{
+            maxWidth: "480px",
+            maxHeight: "420px",
+            width: "100%",
+            height: "auto",
+          }} />
+        </Box>
+
         {pages.map((page, index) => {
           return (
             <InfoCardWithToggleButton

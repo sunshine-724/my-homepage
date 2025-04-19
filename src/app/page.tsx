@@ -1,13 +1,11 @@
 "use client"
-import MediaSwiper from "@/app/component/ProjectCard/MediaSwiper"
-import { Typography } from "@mui/material";
-import { useEffect,useState } from "react";
-
-
-const files: string[] = ["introduction/picture.png", "introduction/picture2.png", "introduction/picture3.jpg", "introduction/picture4.jpg", "introduction/picture5.png"]
+import { GitHub,X } from "@mui/icons-material";
+import { Box, IconButton, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 export default function Top() {
   const [totalViews, setTotalViews] = useState<number | null>(null);
+  const myIconPath = "/icon/fish.jpg";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,15 +27,26 @@ export default function Top() {
 
   return (
     <>
-      <MediaSwiper files={files}></MediaSwiper>
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <img src={myIconPath} alt="My Icon" style={{ width: "200px", height: "200px", borderRadius: "50%" }} />
+      </Box>
+      <Typography variant="h3" textAlign={"center"}>SNS</Typography>
+      <Box sx={{ display: "flex", flexDirection:"row", justifyContent: "center",gap: 3}}>
+        <IconButton onClick={() => window.open("https://twitter.com/Sunshine4154", "_blank")}>
+          <X sx={{ fontSize: 55 , color:"white",background:"black",borderRadius:"50%"}} />
+        </IconButton>
+        <IconButton onClick={() => window.open("https://github.com/sunshine-724", "_blank")}>
+          <GitHub sx={{ fontSize: 60 , color:"black"}} />
+        </IconButton>
+      </Box>
       <Typography variant="h3" textAlign={"center"}>アクセスカウンター</Typography>
       <Typography variant="h4" textAlign="center">
         {totalViews !== null ? `${totalViews.toLocaleString()} PV` : "読み込み中..."}
       </Typography>
-
       <Typography variant="h3" textAlign={"center"}>最新のお知らせ</Typography>
-
+      <Typography variant="h4" textAlign={"center"}>工事中</Typography>
       <Typography variant="h3" textAlign={"center"}>最新のブログ</Typography>
+      <Typography variant="h4" textAlign={"center"}>工事中</Typography>
     </>
   );
 }
