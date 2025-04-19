@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { useEffect,useState } from "react";
 
 
-const files: string[] = ["introduction/iloveimgResized/picture.png", "introduction/iloveimgResized/picture2.png", "introduction/iloveimgResized/picture3.JPG", "introduction/iloveimgResized/picture4.jpg", "introduction/iloveimgResized/picture5.png"]
+const files: string[] = ["introduction/picture.png", "introduction/picture2.png", "introduction/picture3.jpg", "introduction/picture4.jpg", "introduction/picture5.png"]
 
 export default function Top() {
   const [totalViews, setTotalViews] = useState<number | null>(null);
