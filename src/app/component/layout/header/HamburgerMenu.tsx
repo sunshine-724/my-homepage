@@ -8,6 +8,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useRouter } from "next/navigation";
 import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import { IconButton } from '@mui/material';
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 const anchor = 'left';
@@ -55,9 +56,9 @@ export default function HamburgerMenu({ pages, router, handlePageTransition }: H
 
     return (
         <div>
-            <Button onClick={toggleDrawer(anchor, true)}>
-                <MenuIcon sx={{fontSize: 40,color:"white",marginLeft:"0"}}/>
-            </Button>
+            <IconButton onClick={toggleDrawer(anchor, true)} sx={{ p: 0 }}>
+                <MenuIcon sx={{ fontSize: 40, color: "white" }} />
+            </IconButton>
             <Drawer
                 anchor={anchor}
                 open={state[anchor]}

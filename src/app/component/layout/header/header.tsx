@@ -18,7 +18,7 @@ import { Collapse, useMediaQuery, useTheme } from '@mui/material';
 import HamburgerMenu from './HamburgerMenu';
 
 
-const pages = ['ポートフォリオ', '自己紹介', 'ブログ', 'お問い合わせ', 'お知らせ'];
+const pages = ['トップページ','ポートフォリオ', '自己紹介', 'ブログ', 'お問い合わせ', 'お知らせ'];
 
 function Header() {
   const router = useRouter();
@@ -67,7 +67,7 @@ function Header() {
         pointerEvents: scrollState ? "auto" : "none", // 非表示時はクリック無効
       }}
     >
-      <AppBar position="fixed" sx={{ background: "#40E0D0", top: 0, left: 0, width: "100%", height: "auto", zIndex: 1000 }}>
+      <AppBar position="fixed" sx={{ background: "#40E0D0", top: 0, left: 0, width: "100%", height: "auto", zIndex: 1000,paddingLeft: 0 }}>
         <Container maxWidth="xl">
           <Collapse in={!isSmUp}>
             <Box sx={{ display: "flex", flexDirection: "row",justifyContent: "center",alignItems: "center"}}>
@@ -78,7 +78,7 @@ function Header() {
                 <Typography
                   sx={{
                     textAlign: 'center',
-                    fontSize: '1.8rem',
+                    fontSize: '1.7rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
