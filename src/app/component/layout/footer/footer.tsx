@@ -20,8 +20,9 @@ export default function Footer() {
         background: "#40E0D0",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        padding: 2
+        width: "100%",
+        paddingTop: 2,
+        paddingBottom: 2
       }}>
       {/* 中央配置のTypography */}
       <Typography
