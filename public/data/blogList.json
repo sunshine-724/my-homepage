@@ -1,120 +1,12 @@
 [
   {
     "id": "1",
-    "title": "React 18の新機能と実装ガイド",
-    "date": "2025-03-28",
+    "title": "自分のWebページについて",
+    "date": "2025-4-22",
     "chips": [
       "React",
-      "JavaScript",
-      "Frontend",
-      "Hooks"
-    ]
-  },
-  {
-    "id": "2",
-    "title": "TypeScriptで始める型安全な開発",
-    "date": "2025-04-05",
-    "chips": [
       "TypeScript",
-      "JavaScript",
-      "静的型付け",
-      "VSCode"
-    ]
-  },
-  {
-    "id": "3",
-    "title": "Next.js 14の新機能とパフォーマンス改善",
-    "date": "2025-04-10",
-    "chips": [
-      "Next.js",
-      "React",
-      "SSR",
-      "Vercel",
-      "Performance"
-    ]
-  },
-  {
-    "id": "4",
-    "title": "Docker入門：環境構築からデプロイまで",
-    "date": "2025-04-12",
-    "chips": [
-      "Docker",
-      "Kubernetes",
-      "コンテナ",
-      "DevOps",
-      "CI/CD"
-    ]
-  },
-  {
-    "id": "5",
-    "title": "Go言語で作るマイクロサービス",
-    "date": "2025-04-08",
-    "chips": [
-      "Go",
-      "マイクロサービス",
-      "gRPC",
-      "REST API",
-      "Docker"
-    ]
-  },
-  {
-    "id": "6",
-    "title": "GraphQLとApollo Clientの実践的活用法",
-    "date": "2025-03-15",
-    "chips": [
-      "GraphQL",
-      "Apollo",
-      "React",
-      "API",
-      "フロントエンド"
-    ]
-  },
-  {
-    "id": "7",
-    "title": "AWS Lambdaによるサーバーレスアプリケーション開発",
-    "date": "2025-04-03",
-    "chips": [
-      "AWS",
-      "Lambda",
-      "サーバーレス",
-      "Node.js",
-      "DynamoDB"
-    ]
-  },
-  {
-    "id": "8",
-    "title": "Pythonによる機械学習モデルの構築と展開",
-    "date": "2025-04-11",
-    "chips": [
-      "Python",
-      "TensorFlow",
-      "機械学習",
-      "データサイエンス",
-      "Jupyter"
-    ]
-  },
-  {
-    "id": "9",
-    "title": "Rustの基礎から応用：パフォーマンスとメモリ安全性",
-    "date": "2025-03-22",
-    "chips": [
-      "Rust",
-      "WebAssembly",
-      "システムプログラミング",
-      "パフォーマンス"
-    ]
-  },
-  {
-    "id": "10",
-    "title": "Flutter 4.0で実現するクロスプラットフォーム開発",
-    "date": "2025-04-07",
-    "chips": [
-      "Flutter",
-      "Dart",
-      "モバイル開発",
-      "iOS",
-      "Android",
-      "UI/UX"
+      "Next.js"
     ]
   }
 ]

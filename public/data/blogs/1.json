@@ -1,17 +1,12 @@
 {
     "id": "1",
-    "title": "React 18の新機能と実装ガイド",
-    "date": "2025-03-28",
+    "title": "自分のWebページについて",
+    "date": "2025-04-22",
     "chips": [
       "React",
-      "JavaScript",
-      "Frontend",
-      "Hooks"
+      "TypeScript",
+      "Next.js"
     ],
-    "content": "React 18が正式リリースされ、多くの新機能とパフォーマンス改善が導入されました。本記事では、Concurrent Renderingの仕組みやuseTransitionフックの活用法、Automatic Batching機能によるレンダリング最適化について詳しく解説します。また、これらの新機能を既存のプロジェクトに導入する際の注意点やベストプラクティスも紹介します。サンプルコードとともに、React 18の真価を理解しましょう。",
-    "attachments": {
-      "label": "React 18サンプルプロジェクト",
-      "url": "/attachments/react18-sample-project.zip"
-    },
-    "updatedAt": "2025-04-01"
+    "content": "このブログでは自分のWebページについてどのような技術を使ったのか、また開発中にどういった問題が出たかをリスト形式で書いていきたいと思います。  まだ今日(4/22)の段階ではバックエンドの開発が終了していなので、フロントエンド中心になると思います。",
+    "updatedAt": "2025-04-22"
   }
