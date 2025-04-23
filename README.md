@@ -46,6 +46,6 @@ React + JavaScript での開発にハマりました！
 ## 🧑‍💻 Author
 
 **sunshine724**  
-[GitHub](https://github.com/sunshine-724) | [Portfolio](https://sunshine724.vercel.app/)
+[GitHub](https://github.com/sunshine-724) | [Portfolio](https://sunshine724.vercel.app/portfolio) | [Skills](https://sunshine724.vercel.app/introduction)
 
 ---
