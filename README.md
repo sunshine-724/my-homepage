@@ -13,18 +13,17 @@
 
 | Version | Link | 技術 |
 |--------|------|------|
-| 🥇 初代 | [GitHub Pages版](https://sunshine-724.github.io/index-jp.html) | HTML / CSS / JavaScript |
-| 🥈 2代目 | [Vercel版](https://sunshine724.vercel.app/) | **Next.js / TypeScript / Tailwind CSS** |
+| 🥇 初代 | [GitHub Pages版](https://sunshine-724.github.io/index-jp.html) | HTML / CSS |
+| 🥈 2代目 | [Vercel版](https://sunshine724.vercel.app/) | **Next.js / TypeScript / framer-motion / Material Motion(MUI)** |
 
 ---
 
 ## 🔧 Tech Stack
 
 - **Frontend**: Next.js, TypeScript, React
-- **Styling**: Tailwind CSS, MUI
+- **Styling**: Material Motion,framer-motion 
 - **Hosting**: Vercel
-- **CI/CD**: GitHub Actions
-- **(WIP)** Backend: Node.js, Express, Prisma, Render
+- **(WIP)** Backend: Node.js, Google Analytics 4
 
 ---
 
