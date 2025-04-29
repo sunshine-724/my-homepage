@@ -105,7 +105,7 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
                         >
                             <Typography variant="body1">選択したChipsは以下の通りです</Typography>
                             <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', justifyContent: "center" }}>
-                                {Object.entries(selectedChips).map(([name, chipData]) => (
+                                {Object.entries(selectedChips).map(([name]) => (
                                     <Chip
                                         key={name}
                                         label={name}
@@ -162,6 +162,11 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
             </Collapse>
         </>
     )
+}
+
+function handleClickNextPageButton(inputTitle: string, inputContent: string, markdownFile: File | null, router: ReturnType<typeof useRouter>) {
+    console.log(markdownFile);
+    router.push(`/admin/blog/preview?inputTitle=${encodeURIComponent(inputTitle)}&inputContent=${encodeURIComponent(inputContent)}`);
 }
 
 export default function MakeBlogPage() {
@@ -259,13 +264,15 @@ export default function MakeBlogPage() {
                         <DisplayTechnicalList selectedChips={aboutTechChips} setSelectedChips={setAboutTechChips}></DisplayTechnicalList>
                     </Box>
                 </Box>
-
                 <Box sx={{ position: "absolute", right: "10px", bottom: "10px", width: "20%", height: "10%" }}>
-                    <Button onClick={() => router.push('/admin/blog/preview')} sx={{ background: "#40E0D0", color: "white", width: "100%", height: "100%" }}>
+                    <Button
+                        onClick={() => handleClickNextPageButton(inputTitle,inputContent,markdownFile,router)}
+                        sx={{ background: "#40E0D0", color: "white", width: "100%", height: "100%" }}
+                    >
                         プレビューへ
                     </Button>
                 </Box>
-            </Box>
+            </Box >
         </>
     );
 }
