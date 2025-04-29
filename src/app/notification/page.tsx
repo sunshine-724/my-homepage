@@ -1,12 +1,12 @@
 "use client";
-import SearchAppBar from "@/app/component/SerachBar/SearchAppBar";
+// import SearchAppBar from "@/app/component/SerachBar/SearchAppBar";
 import useFetchNoticeList from "@/hooks/useFetchNoticeList";
 import NoticeList from "./NotificationList";
 import { Box, Typography } from "@mui/material";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function Notification() {
-  const [searchQuery, setSearchQuery] = useState(""); //検索する文字列
+  // const [searchQuery, setSearchQuery] = useState(""); //検索する文字列
   const notifications = useFetchNoticeList(); // そのまま `Notice[]` を取得
 
   return (
@@ -30,9 +30,9 @@ export default function Notification() {
           }}> {/* mt: 0 にして調整 */}
           お知らせ一覧
         </Typography>
-        <SearchAppBar
+        {/* <SearchAppBar
           onSearch={setSearchQuery}
-        />
+        /> */}
       </Box>
       <Box>
         <NoticeList notifications={notifications} />

@@ -3,13 +3,7 @@
 "use client"
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Typography } from '@mui/material';
-import { GitHub, X } from '@mui/icons-material';
 
 export default function Footer() {
   return (
@@ -26,8 +20,9 @@ export default function Footer() {
         background: "#40E0D0",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        padding: 2
+        width: "100%",
+        paddingTop: 2,
+        paddingBottom: 2
       }}>
       {/* 中央配置のTypography */}
       <Typography

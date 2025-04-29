@@ -1,14 +1,14 @@
 "use client"
 import { Box, Button, Typography } from "@mui/material";
 import ProjectCard from "../component/ProjectCard/ProjectCard"
-import SearchAppBar from "../component/SerachBar/SearchAppBar";
+// import SearchAppBar from "../component/SerachBar/SearchAppBar";
 import useFetchBlogList from "@/hooks/useFetchBlogList";
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 const BlogPage = () => {
   const router = useRouter(); //ルーターを取得
-  const [searchQuery, setSearchQuery] = useState(""); //検索する文字列
+  // const [searchQuery, setSearchQuery] = useState(""); //検索する文字列
   const jsonBlogList = useFetchBlogList(); //ブログリストを取得
 
   const handleClick = (id: string) => {
@@ -33,9 +33,10 @@ const BlogPage = () => {
           }}> {/* mt: 0 にして調整 */}
           ブログ一覧
         </Typography>
-        <SearchAppBar
+        {/* <SearchAppBar
           onSearch={setSearchQuery}
-        />
+        /> */}
+ 
       </Box>
 
       <Box

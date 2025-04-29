@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
-import { Card, CardContent, Typography, Button, Collapse, Box } from "@mui/material";
+import { Card, CardContent, Typography, Button, Collapse } from "@mui/material";
 import { Notification } from "@/types/notification";
-import router, { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 //React.FCの型ジェネリクスでは配列の型を指定できないので、NoticeListPropsを作成
@@ -21,7 +21,7 @@ const NotificationList: React.FC<NotificationListProps> = ({ notifications }) =>
 
   return (
     <>
-      {visibleNotices.map((notification, index) => (
+      {visibleNotices.map((notification) => (
         <Card key={notification.id} sx={{ borderLeft: "5px solid", borderColor: importanceColor[notification.importance], mb: 1 }}>
           <CardContent>
             <Button

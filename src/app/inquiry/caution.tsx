@@ -16,7 +16,7 @@ interface cautionProps {
     };
 }
 
-const caution: React.FC<cautionProps> = ({ commonTopBoxStyles, commonTextStyles }) => {
+const caution: React.FC<cautionProps> = ({commonTextStyles }) => {
     return (
         <Box sx={{ backgroundColor: "#40E0D0", width: { xs: "100%", md: "50%" }, height: { xs: "50%", md: "100%" }, borderRadius: "5px", }}>
             <Typography sx={{ ...commonTextStyles }}>

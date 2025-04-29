@@ -8,21 +8,23 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
-import { useRouter } from 'next/navigation';
-import HeaderAnimatedButton from './HeaderAnimatedButton';
-
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Collapse } from '@mui/material';
 
-const pages = ['ポートフォリオ', '自己紹介', 'ブログ', 'お問い合わせ', 'お知らせ'];
+import { useRouter } from 'next/navigation';
+import HeaderAnimatedButton from './HeaderAnimatedButton';
+import handlePageTransiton from './handlePageTransition';
+import { Collapse, useMediaQuery, useTheme } from '@mui/material';
+import HamburgerMenu from './HamburgerMenu';
+
+
+const pages = ['トップページ','ポートフォリオ', '自己紹介', 'ブログ', 'お問い合わせ', 'お知らせ'];
 
 function Header() {
   const router = useRouter();
   const { scrollY } = useScroll(); //これはreactの機能ではなく、framer-motionの機能なので、描画を更新したいならuseEffectの中で使う必要がある
-
-
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const theme = useTheme(); //テーマを取得
+  const isSmUp = useMediaQuery(theme.breakpoints.up('sm')); // sm以上かどうか
 
   const [scrollState, setScrollState] = useState<boolean>(true); //このヘッダの状態を管理
   const [lastScrollY, setLastScrollY] = useState<number>(0); //最後のスクロール位置を管理
@@ -43,30 +45,6 @@ function Header() {
   useEffect(() => {
     console.log("scrollState:", scrollState);
   }, [scrollState]);
-
-  const handlePageTransiton = (pageNumber: number) => {
-    switch (pageNumber) {
-      case 0:
-        router.push('/portfolio')
-        break
-      case 1:
-        router.push('/introduction')
-        break
-      case 2:
-        router.push('/blog')
-        break
-      case 3:
-        router.push('/inquiry')
-        break
-      case 4:
-        router.push('/notification')
-        break
-      default:
-        alert("存在しないページです")
-        console.error("エラーです")
-    }
-    setAnchorElNav(null);
-  };
 
   return (
     <motion.div
@@ -89,36 +67,60 @@ function Header() {
         pointerEvents: scrollState ? "auto" : "none", // 非表示時はクリック無効
       }}
     >
-      <AppBar position="fixed" sx={{ background: "#40E0D0", top: 0, left: 0, width: "100%", height: "125px", zIndex: 1000 }}>
+      <AppBar position="fixed" sx={{ background: "#40E0D0", top: 0, left: 0, width: "100%", height: "auto", zIndex: 1000,paddingLeft: 0 }}>
         <Container maxWidth="xl">
-          <Typography
-            sx={{
-              textAlign: 'center',
-              fontSize: { xs: '1.8rem', sm: "2.0rem" },
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            Sunshineのホームページ
-          </Typography>
-          <Toolbar disableGutters sx={{ display: { xs: "none", sm: "flex" } }}>
-            {/* xs:スマホなら,md:900px以上なら */}
-            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              {pages.map((page, index) => (
-                <Box key={page} sx={{ display: 'block' }}>
-                  <HeaderAnimatedButton
-                    page={page}
-                    index={index}
-                    handlePageTransition={handlePageTransiton}
-                  />
-                </Box>
-              ))}
+          <Collapse in={!isSmUp}>
+            <Box sx={{ display: "flex", flexDirection: "row",justifyContent: "center",alignItems: "center"}}>
+              <Box sx={{left:0, position:"absolute"}}>
+                <HamburgerMenu pages={pages} router={router} handlePageTransition={handlePageTransiton}></HamburgerMenu>
+              </Box>
+              <Box>
+                <Typography
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.7rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  Sunshineのホームページ
+                </Typography>
+              </Box>
             </Box>
-          </Toolbar>
+          </Collapse>
+          <Collapse in={isSmUp}>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Typography
+                sx={{
+                  textAlign: 'center',
+                  fontSize: "2.0rem",
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                Sunshineのホームページ
+              </Typography>
+              <Toolbar disableGutters sx={{ display: "flex" }}>
+                <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  {pages.map((page, index) => (
+                    <Box key={page} sx={{ display: 'block' }}>
+                      <HeaderAnimatedButton
+                        page={page}
+                        index={index}
+                        router={router}
+                        handlePageTransition={handlePageTransiton}
+                      />
+                    </Box>
+                  ))}
+                </Box>
+              </Toolbar>
+            </Box>
+          </Collapse>
         </Container>
       </AppBar>
-    </motion.div>
+    </motion.div >
   );
 }
 export default Header;

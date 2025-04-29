@@ -1,6 +1,6 @@
 /*参考URL https://qiita.com/k2hmr/items/a5b19f3b65376a595310 */
 "use client"
-import { Tooltip, SxProps, Button, Typography, Box } from "@mui/material";
+import { Tooltip, SxProps, Button, Box } from "@mui/material";
 import { useState } from "react";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
