@@ -182,8 +182,13 @@ export default function MakeBlogPage() {
     const router = useRouter();
 
     const updateInputValue = (name: string, value: string) => {
-        name === "title" ? setInputTitle(value) : setInputContent(value);
+        if (name === "title") {
+            setInputTitle(value);
+        } else {
+            setInputContent(value);
+        }
     };
+
 
     const handleMarkdownFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]; //ファイルは一つを想定
@@ -266,7 +271,7 @@ export default function MakeBlogPage() {
                 </Box>
                 <Box sx={{ position: "absolute", right: "10px", bottom: "10px", width: "20%", height: "10%" }}>
                     <Button
-                        onClick={() => handleClickNextPageButton(inputTitle,inputContent,markdownFile,router)}
+                        onClick={() => handleClickNextPageButton(inputTitle, inputContent, markdownFile, router)}
                         sx={{ background: "#40E0D0", color: "white", width: "100%", height: "100%" }}
                     >
                         プレビューへ

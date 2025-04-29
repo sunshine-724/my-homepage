@@ -1,6 +1,6 @@
 import React from 'react';
 import { PictureAsPdf, Image as ImageIcon, AttachFile, DocumentScanner } from '@mui/icons-material';
-import { Box, Typography } from '@mui/material';
+import { Box} from '@mui/material';
 
 // ファイルの拡張子に基づいてアイコンを返すコンポーネント
 const FileIcon = ({ fileName }: { fileName: string }) => {
