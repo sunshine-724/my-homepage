@@ -50,7 +50,7 @@ export default function RootLayout({
         <Header />
         <Box
           sx={{
-            marginTop: `${HEADER_HEIGHT}px`,
+            marginTop:{ xs: `calc(${HEADER_HEIGHT}px - 90px)`, sm: `${HEADER_HEIGHT}px`},
             minHeight: `calc(100vh - ${HEADER_HEIGHT}px - ${FOOTER_HEIGHT}px)`,
           }}
         >

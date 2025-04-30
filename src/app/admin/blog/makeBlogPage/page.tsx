@@ -164,10 +164,14 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
     )
 }
 
-function handleClickNextPageButton(inputTitle: string, inputContent: string, markdownFile: File | null, router: ReturnType<typeof useRouter>) {
-    console.log(markdownFile);
-    router.push(`/admin/blog/preview?inputTitle=${encodeURIComponent(inputTitle)}&inputContent=${encodeURIComponent(inputContent)}`);
+function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, markdownFile: File | null, router: ReturnType<typeof useRouter>) {
+    const encodedTitle = encodeURIComponent(inputTitle);
+    const encodedContent = encodeURIComponent(inputContent);
+    const encodedChips = encodeURIComponent(JSON.stringify(aboutTechChips));
+
+    router.push(`/admin/blog/preview?inputTitle=${encodedTitle}&inputContent=${encodedContent}&aboutTechChips=${encodedChips}`);
 }
+
 
 export default function MakeBlogPage() {
     /*データ*/
@@ -213,9 +217,13 @@ export default function MakeBlogPage() {
 
     return (
         <>
-            <Box sx={{ position: "relative", minHeight: "90vh" }}>
-                <Box sx={{ width: "10%", height: "10%" }}>
-                    <Button onClick={() => router.push('/')} sx={{ background: "#40E0D0", color: "white", width: "100%", height: "100%" }}>
+            <Box sx={{ minHeight: "75vh", display: "flex", flexDirection: "column" }}>
+                <Box sx={{ width: { xs: "30%", md: "10%" } }}>
+                    <Button size="large"
+                        onClick={() => router.push('/')}
+                        sx={{
+                            background: "#40E0D0", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
+                        }}>
                         戻る
                     </Button>
                 </Box>
@@ -269,15 +277,17 @@ export default function MakeBlogPage() {
                         <DisplayTechnicalList selectedChips={aboutTechChips} setSelectedChips={setAboutTechChips}></DisplayTechnicalList>
                     </Box>
                 </Box>
-                <Box sx={{ position: "absolute", right: "10px", bottom: "10px", width: "20%", height: "10%" }}>
-                    <Button
-                        onClick={() => handleClickNextPageButton(inputTitle, inputContent, markdownFile, router)}
-                        sx={{ background: "#40E0D0", color: "white", width: "100%", height: "100%" }}
+                <Box sx={{ width: { xs: "30%", md: "15%" }, display: "flex", alignSelf: "flex-end" }}>
+                    <Button size="large"
+                        onClick={() => handleClickNextPageButton(inputTitle, inputContent,aboutTechChips,markdownFile, router)}
+                        sx={{
+                            background: "#40E0D0", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
+                        }}
                     >
                         プレビューへ
                     </Button>
                 </Box>
-            </Box >
+            </Box>
         </>
     );
 }
