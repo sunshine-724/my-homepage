@@ -48,13 +48,12 @@ export default function PreviewPage() {
       </Typography>
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{inputContent}</ReactMarkdown>
 
-      // チップの表示
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center", // ✅ 要素を水平方向に中央寄せ
-          textAlign: "center",  // ✅ テキストも中央に
+          alignItems: "center",
+          textAlign: "center",
         }}
       >
         <Typography variant="body1">選択したChipsは以下の通りです</Typography>
