@@ -1,9 +1,12 @@
+import { Suspense } from "react"
 import ClientPreview from "./ClientPreview"
 
-export default function PreviewPage(){
-    return(
+export default function PreviewPage() {
+    return (
         <>
-            <ClientPreview />
+            <Suspense fallback={<div>Loading preview...</div>}>
+                <ClientPreview />
+            </Suspense>
         </>
     )
 }
