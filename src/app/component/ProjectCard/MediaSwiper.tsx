@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Swiper as SwiperClass } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -65,7 +65,7 @@ const MediaSwiper: React.FC<MediaSwiperProps> = ({
             {files.map((file, index) => {
                 const isVideo = file.endsWith(".mp4") || file.endsWith(".webm");
                 return (
-                    <SwiperSlide style={{ height: slideHeight, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <SwiperSlide key={index} style={{ height: slideHeight, display: "flex", alignItems: "center", justifyContent: "center" }}>
                         {isVideo ? (
                             <video
                                 src={file}
