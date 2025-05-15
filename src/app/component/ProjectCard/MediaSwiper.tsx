@@ -10,17 +10,31 @@ import 'swiper/css/pagination';
 interface MediaSwiperProps {
     files: string[];
     defaultDelay?: number;
+    slideHeight?: string;
     title?: string;
     mediaStyle?: React.CSSProperties;
 }
+
 
 const MediaSwiper: React.FC<MediaSwiperProps> = ({
     files,
     defaultDelay = 5000,
     title = "",
+    slideHeight = "auto",
     mediaStyle = {},
 }) => {
     const [slideDelay, setSlideDelay] = useState(defaultDelay);
+
+    const commonMediaStyle: React.CSSProperties = {
+        maxWidth: "50%",
+        height: "auto",
+        display: "block",
+        margin: "0 auto",
+        borderRadius: "10px",
+        objectFit: "contain",
+        aspectRatio: "16 / 9", // 必要に応じて変更可能
+        ...mediaStyle,
+    }
 
     return (
         <Swiper
@@ -51,7 +65,7 @@ const MediaSwiper: React.FC<MediaSwiperProps> = ({
             {files.map((file, index) => {
                 const isVideo = file.endsWith(".mp4") || file.endsWith(".webm");
                 return (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={index} style={{ height: slideHeight, display: "flex", alignItems: "center", justifyContent: "center" }}>
                         {isVideo ? (
                             <video
                                 src={file}
@@ -59,25 +73,13 @@ const MediaSwiper: React.FC<MediaSwiperProps> = ({
                                 autoPlay
                                 muted
                                 loop
-                                style={{
-                                    display: "block",
-                                    margin: "0 auto",
-                                    borderRadius: "10px",
-                                    objectFit: "contain",
-                                    aspectRatio: "16 / 9", // 必要に応じて変更可能
-                                    ...mediaStyle,
-                                }}
+                                style={commonMediaStyle}
                             />
                         ) : (
                             <img
                                 src={file}
                                 alt={`${title} ${index + 1}`}
-                                style={{
-                                    display: "block",
-                                    margin: "0 auto",
-                                    borderRadius: "10px",
-                                    ...mediaStyle,
-                                }}
+                                style={commonMediaStyle}
                             />
                         )}
                     </SwiperSlide>
