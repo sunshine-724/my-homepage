@@ -1,6 +1,5 @@
 "use client"
 import { Box } from "@mui/material";
-import MediaSwiper from "@/app/component/ProjectCard/MediaSwiper";
 import InfoCardWithToggleButton from "@/app/component/InfoCard/InfoCardWithToggleButton";
 import ProjectCard from "../component/ProjectCard/ProjectCard";
 
@@ -178,19 +177,6 @@ Nightcore
           flexDirection: "column",
           alignItems: "center",
         }}>
-        {/* <Box
-          sx={{
-            width: "100%",
-            maxWidth: "500px",
-          }}
-        >
-          <MediaSwiper files={files} mediaStyle={{
-            maxWidth: "480px",
-            maxHeight: "420px",
-            width: "100%",
-            height: "auto",
-          }} />
-        </Box> */}
         <ProjectCard
           files={files}
           title="中川一樹の自己紹介"
