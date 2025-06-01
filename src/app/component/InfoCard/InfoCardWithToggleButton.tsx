@@ -51,7 +51,7 @@ const InfoCardWithToggleButton: React.FC<InfoCardWithToggleButtonProps> = ({
   }
 
   return (
-    <Card sx={{ width: "80%", p: 2, boxShadow: 3, backgroundColor }}>
+    <Card sx={{ width: "100%", p: 2, boxShadow: 3, backgroundColor }}>
       <CardContent>
         <Box display="flex" justifyContent="flex-start" alignItems="center">
           <Typography gutterBottom variant="h4" component="div">
