@@ -51,6 +51,12 @@ const descriptionText = `
 
 ---
 
+### 📎 プロジェクトリンク
+
+🔗 [GitHubリポジトリはこちら](https://github.com/sunshine-724/SaveCACchan)  
+
+---
+
 ### 💡 学び・感想
 
 このプロジェクトでは、**プログラマーとプランナー間の連携**の重要性を強く感じました。  
