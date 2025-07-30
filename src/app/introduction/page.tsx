@@ -1,7 +1,7 @@
 "use client"
 import { Box } from "@mui/material";
-import MediaSwiper from "@/app/component/ProjectCard/MediaSwiper";
 import InfoCardWithToggleButton from "@/app/component/InfoCard/InfoCardWithToggleButton";
+import ProjectCard from "../component/ProjectCard/ProjectCard";
 
 export default function Introduction() {
   const currentDate = new Date();
@@ -156,7 +156,6 @@ Nightcore
 
   // pages 配列の定義
   const pages: { title: string; description: string; isOpenToggle: boolean }[] = [
-    { title: '自己紹介', description: introText, isOpenToggle: true },
     { title: 'プログラミングについて', description: aboutProgrammingText, isOpenToggle: true },
     { title: 'アニメについて', description: aboutAnimeText, isOpenToggle: false },
     { title: 'ゲームについて', description: aboutGameText, isOpenToggle: false },
@@ -178,19 +177,12 @@ Nightcore
           flexDirection: "column",
           alignItems: "center",
         }}>
-        <Box
-          sx={{
-            width: "100%",
-            maxWidth: "500px",
-          }}
-        >
-          <MediaSwiper files={files} mediaStyle={{
-            maxWidth: "480px",
-            maxHeight: "420px",
-            width: "100%",
-            height: "auto",
-          }} />
-        </Box>
+        <ProjectCard
+          files={files}
+          title="中川一樹の自己紹介"
+          description={introText}
+          chips={[]}
+        />
 
         {pages.map((page, index) => {
           return (

@@ -33,12 +33,18 @@ const descriptionText = `
 
 ---
 
+### 📎 プロジェクトリンク
+
+🔗 [GitHubリポジトリはこちら](https://github.com/sunshine-724/JarijariMod)  
+
+---
+
 ### 💬 感想
 
 2回生の授業では実験やレポートも多く、時間のやりくりが大変でしたが、チームをまとめながら開発をやり切った経験は非常に貴重な学びとなりました。
 `;
 
-const files:string[] = ["/portfolio/minecraft/all.png","/portfolio/minecraft/chase.mp4","/portfolio/minecraft/inventory.png","/portfolio/minecraft/profile.png","/portfolio/minecraft/recover.mp4"]
+const files:string[] = ["/portfolio/minecraft/all.png","/portfolio/minecraft/chase.mp4","/portfolio/minecraft/inventory.png","/portfolio/minecraft/recover.mp4"]
 export default function MinecraftPage() {
   return (
     <>

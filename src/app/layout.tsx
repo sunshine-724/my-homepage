@@ -5,7 +5,8 @@ import { Box } from "@mui/material";
 import Footer from "./component/layout/footer/footer";
 import Script from "next/script";
 
-const HEADER_HEIGHT = 140;
+const HEADER_HEIGHT_PC = 140;
+const HEADER_HEIGHT_SMARTPHONE = 50;
 const FOOTER_HEIGHT = 55;
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ""; 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export default function RootLayout({
   children,
@@ -55,8 +56,8 @@ export default function RootLayout({
         <Header />
         <Box
           sx={{
-            marginTop:{ xs: `calc(${HEADER_HEIGHT}px - 90px)`, sm: `${HEADER_HEIGHT}px`},
-            minHeight: `calc(100vh - ${HEADER_HEIGHT}px - ${FOOTER_HEIGHT}px)`,
+            marginTop: { xs: `${HEADER_HEIGHT_SMARTPHONE}px`, md: `${HEADER_HEIGHT_PC}px` },
+            minHeight: {xs: `calc(100vh - ${HEADER_HEIGHT_SMARTPHONE}px - ${FOOTER_HEIGHT}px)`,md:`calc(100vh - ${HEADER_HEIGHT_PC}px - ${FOOTER_HEIGHT}px)`,}
           }}
         >
           {children}
