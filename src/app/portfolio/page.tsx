@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const PortfolioPage = () => {
   const router = useRouter();
   const items = [
-    { title: "神経衰弱", path: "/portfolio/minecraft.png", link: "/portfolio/masterpiece/trumpGame" },
+    { title: "神経衰弱", path: "/portfolio/trumpGame.png", link: "/portfolio/masterpiece/trumpGame" },
     { title: "マイクラMod", path: "/portfolio/minecraft.png", link: "/portfolio/masterpiece/minecraft" },
     { title: "CACちゃんを救え", path: "/portfolio/saveCACchan.png", link: "/portfolio/masterpiece/saveCACchan" },
     { title: "G社からの脱出", path: "/portfolio/escapeG.png", link: "/portfolio/masterpiece/escapeG" },
