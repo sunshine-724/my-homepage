@@ -1,0 +1,28 @@
+/* Markdown table styling */
+.content table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    border-color: black !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: auto !important;;
+}
+
+.content tbody,
+.content td,
+.content tfoot,
+.content th,
+.content thead,
+.content tr {
+    border-color: black !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+    padding: 0.5rem;
+}
+
+.content table, th, td {
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 枠線の太さ・種類・色を指定 */
+  border-collapse: collapse; /* 隣接するセルの枠線を1本にまとめる */
+}
