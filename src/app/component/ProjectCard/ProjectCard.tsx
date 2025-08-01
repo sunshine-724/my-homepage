@@ -4,6 +4,8 @@ import React from "react";
 import { useChipColors } from "./useChipColors"; // フックをインポート
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+
 // 型として使う
 // コンポーネントとして使う
 import 'swiper/css';
@@ -30,7 +32,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ files = [], title, descriptio
                 <Typography gutterBottom variant="h4">
                     {title}
                 </Typography>
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{description}</ReactMarkdown>
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw]}
+                    remarkRehypeOptions={{ passThrough: ['link'] }}
+                >
+                    {description}
+                </ReactMarkdown>
             </CardContent>
             <Box sx={{ display: "flex", gap: 1, p: 2 }}>
                 {chips.map((chip, index) => (

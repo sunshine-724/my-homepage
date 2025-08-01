@@ -10,7 +10,8 @@ const PortfolioPage = () => {
     { title: "マイクラMod", path: "/portfolio/minecraft.png", link: "/portfolio/masterpiece/minecraft" },
     { title: "CACちゃんを救え", path: "/portfolio/saveCACchan.png", link: "/portfolio/masterpiece/saveCACchan" },
     { title: "G社からの脱出", path: "/portfolio/escapeG.png", link: "/portfolio/masterpiece/escapeG" },
-    { title: "粉物判定アプリ", path: "/portfolio/judgeFlourBasedDishes.png", link: "/portfolio/masterpiece/judgeFlourBasedDishes" }
+    { title: "粉物判定アプリ", path: "/portfolio/judgeFlourBasedDishes.png", link: "/portfolio/masterpiece/judgeFlourBasedDishes" },
+    { title: "スピロデザイン", path: "/portfolio/spiroDesign.jpeg", link: "/portfolio/masterpiece/spiroDesign" }
   ];
 
   return (
