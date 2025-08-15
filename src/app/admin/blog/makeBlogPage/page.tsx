@@ -81,14 +81,13 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
         });
     };
 
-
     return (
         <>
             <Collapse in={!isClicked}>
                 {!selectedChips || Object.keys(selectedChips).length === 0 ? (
                     <Button
                         size="large"
-                        sx={{ background: "#40E0D0", color: "white", textTransform: "none" }}
+                        sx={{ background: "#696969", color: "white", textTransform: "none" }}
                         onClick={() => setIsClicked(true)}
                     >
                         Chipsを選択してください
@@ -99,8 +98,8 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
-                                alignItems: "center", // ✅ 要素を水平方向に中央寄せ
-                                textAlign: "center",  // ✅ テキストも中央に
+                                alignItems: "center",
+                                textAlign: "center",
                             }}
                         >
                             <Typography variant="body1">選択したChipsは以下の通りです</Typography>
@@ -144,7 +143,7 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
                                                 key={chip.name}
                                                 variant="contained"
                                                 sx={{
-                                                    background: isSelected ? "#1E90FF" : "#40E0D0", // 選択中は青系、それ以外はターコイズ
+                                                    background: isSelected ? "#696969" : "#A9A9A9", // 選択中はグレー系、それ以外はダークグレー
                                                     color: "white"
                                                 }}
                                                 onClick={() => handleChipClick(chip)}
@@ -164,14 +163,13 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
     )
 }
 
-function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, markdownFile: File | null, router: ReturnType<typeof useRouter>) {
+function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, router: ReturnType<typeof useRouter>) {
     const encodedTitle = encodeURIComponent(inputTitle);
     const encodedContent = encodeURIComponent(inputContent);
     const encodedChips = encodeURIComponent(JSON.stringify(aboutTechChips));
 
     router.push(`/admin/blog/preview?inputTitle=${encodedTitle}&inputContent=${encodedContent}&aboutTechChips=${encodedChips}`);
 }
-
 
 export default function MakeBlogPage() {
     /*データ*/
@@ -180,30 +178,25 @@ export default function MakeBlogPage() {
 
     const [aboutTechChips, setAboutTechChips] = useState<ChipList | null>(null); //関連技術
 
-    const [markdownFile, setMarkdownFile] = useState<File | null>(null); //Markdownファイル
     const [attachmentFiles, setAttachmentFiles] = useState<File[]>([]); //添付ファイル
 
     const router = useRouter();
 
-    const updateInputValue = (name: string, value: string) => {
-        if (name === "title") {
-            setInputTitle(value);
-        } else {
-            setInputContent(value);
-        }
-    };
 
 
     const handleMarkdownFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0]; //ファイルは一つを想定
+        const reader = new FileReader();
+
         if (!file) return alert("Markdownファイルを選択してください");
 
-        if (file.name.endsWith(".md")) {
-            setMarkdownFile(file);
-        } else {
-            setMarkdownFile(null);
-            alert("Markdown（.md）ファイルのみを選択してください");
-        }
+        reader.onload = (event) => {
+            const text = event.target?.result as string;
+            console.log("読み込んだ内容:", text);
+            setInputContent(text);
+        };
+
+        reader.readAsText(file);
     };
 
     const handleAttachmentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -217,12 +210,18 @@ export default function MakeBlogPage() {
 
     return (
         <>
-            <Box sx={{ minHeight: "75vh", display: "flex", flexDirection: "column" }}>
+            <Box sx={{
+                minHeight: "80vh",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: 1,
+            }}>
                 <Box sx={{ width: { xs: "30%", md: "10%" } }}>
                     <Button size="large"
                         onClick={() => router.push('/')}
                         sx={{
-                            background: "#40E0D0", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
+                            background: "#696969", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
                         }}>
                         戻る
                     </Button>
@@ -231,12 +230,14 @@ export default function MakeBlogPage() {
                     <OriginTextField
                         title="Title"
                         boxWidth="50%"
-                        onChange={(val) => updateInputValue("title", val)}
+                        value={inputTitle}
+                        onChange={setInputTitle}
                     />
                     <OriginTextField
                         title="Contents(GitHub Flavored Markdown対応)"
                         boxWidth="50%"
-                        onChange={(val) => updateInputValue("content", val)}
+                        value={inputContent}
+                        onChange={setInputContent}
                     />
 
                     <FileUploadSection
@@ -263,10 +264,10 @@ export default function MakeBlogPage() {
                         <Collapse in={attachmentFiles.length > 0}>
                             <AttachmentList files={attachmentFiles} onActionClick={handleDummyAction} />
                             <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                                <Button onClick={handleDummyAction} sx={{ background: "#40E0D0", color: "white" }}>
+                                <Button onClick={handleDummyAction} sx={{ background: "#696969", color: "white" }}>
                                     ファイル選択をやり直す
                                 </Button>
-                                <Button onClick={handleDummyAction} sx={{ background: "#40E0D0", color: "white" }}>
+                                <Button onClick={handleDummyAction} sx={{ background: "#696969", color: "white" }}>
                                     ファイルを追加する
                                 </Button>
                             </Box>
@@ -279,9 +280,9 @@ export default function MakeBlogPage() {
                 </Box>
                 <Box sx={{ width: { xs: "30%", md: "15%" }, display: "flex", alignSelf: "flex-end" }}>
                     <Button size="large"
-                        onClick={() => handleClickNextPageButton(inputTitle, inputContent,aboutTechChips,markdownFile, router)}
+                        onClick={() => handleClickNextPageButton(inputTitle, inputContent, aboutTechChips, router)}
                         sx={{
-                            background: "#40E0D0", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
+                            background: "#696969", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
                         }}
                     >
                         プレビューへ

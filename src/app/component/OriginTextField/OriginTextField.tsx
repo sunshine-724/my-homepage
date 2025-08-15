@@ -1,44 +1,44 @@
 import { Box, TextField, Typography } from "@mui/material";
-import { useState } from "react";
 
 interface OriginTextFieldProps {
     title: string;
     boxWidth: string;
-    onChange?: (value: string) => void; //コールバック
+    value: string; // 親からの値
+    onChange?: ((value: string) => void) | ((value: string) => void)[]; // 配列も許可
 }
 
-export default function OriginTextField({ title, boxWidth, onChange }: OriginTextFieldProps) {
-    const [inputValue, setInputValue] = useState("");
-
+export default function OriginTextField({ title, boxWidth, value, onChange }: OriginTextFieldProps) {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value;
-        setInputValue(value);
+        const targetValue = event.target.value;
         if (onChange) {
-            onChange(value); // コールバックを呼び出す
+            if (Array.isArray(onChange)) {
+                onChange.forEach(fn => fn(targetValue));
+            } else {
+                onChange(targetValue);
+            }
         }
     };
 
     return (
-        <>
-            <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                }}
+        <Box
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+            }}
+        >
+            <Typography
+                variant="h4"
+                sx={{ display: "flex" }}
             >
-                <Typography
-                    variant="h4"
-                    sx={{ display: "flex" }}
-                >{title}
-                </Typography>
-                <TextField
-                    sx={{ width: boxWidth }}
-                    multiline //複数行を許可する
-                    value={inputValue}
-                    onChange={handleInputChange}
-                />
-            </Box>
-        </>
+                {title}
+            </Typography>
+            <TextField
+                sx={{ width: boxWidth }}
+                multiline
+                value={value} // 親からの値をそのまま表示
+                onChange={handleInputChange}
+            />
+        </Box>
     );
 }
