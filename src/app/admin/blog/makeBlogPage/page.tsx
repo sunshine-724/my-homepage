@@ -6,7 +6,8 @@ import DownloadIcon from "@mui/icons-material/Download";
 import { Backdrop, Box, Button, Chip, Collapse, Typography } from "@mui/material";
 import { useState } from "react";
 import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
-import { ChipList } from "@/types/chip";
+import { ChipList,getCategories } from "@/types/chip";
+import { Payload } from "@/types/blog";
 import { useRouter } from "next/navigation";
 
 function FileUploadSection({ label, accept, multiple = false, onChange, }: { label: string; accept: string; multiple?: boolean; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; }) {
@@ -164,11 +165,31 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
 }
 
 function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, router: ReturnType<typeof useRouter>) {
-    const encodedTitle = encodeURIComponent(inputTitle);
-    const encodedContent = encodeURIComponent(inputContent);
-    const encodedChips = encodeURIComponent(JSON.stringify(aboutTechChips));
+    const today = new Date();
+    const s_today = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
-    router.push(`/admin/blog/preview?inputTitle=${encodedTitle}&inputContent=${encodedContent}&aboutTechChips=${encodedChips}`);
+    const categories : string[] = aboutTechChips ? getCategories(aboutTechChips) : [""];
+
+    const payload : Payload = {
+        title:inputTitle,
+        date:s_today,
+        content:inputContent,
+        tags: categories,
+        isPublished: false,
+    }
+
+
+    const res = fetch("/api/blog/postDraftTable",{
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload)
+    })
+
+    console.log(res);
+
+    // router.push(`/admin/blog/preview?inputTitle=${encodedTitle}&inputContent=${encodedContent}&aboutTechChips=${encodedChips}`);
 }
 
 export default function MakeBlogPage() {

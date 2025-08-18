@@ -4,3 +4,7 @@ export interface ChipData{
 }
 
 export type ChipList = Record<string, ChipData>; //nameとChipDataの連想配列
+
+export function getCategories(chipList:ChipList) : string[]{
+    return Object.values(chipList).map(chip => chip.category); // chipList -> ChipData[] -> category[]
+}

@@ -41,10 +41,8 @@ export default function PreviewPage() {
   return (
     <>
       <Box sx={{
-        height: "80vh",
         display: "flex",
         flexDirection: "column",
-        padding: 1,
       }}>
         <Box sx={{ width: { xs: "30%", md: "10%" } }}>
           <Button size="large"
@@ -56,7 +54,7 @@ export default function PreviewPage() {
           </Button>
         </Box>
 
-        <Typography sx={{ fontSize: "1.4rem",color: "red", textAlign: "center", marginTop: "20px" }}>これはブログのプレビューページです</Typography>
+        <Typography sx={{ fontSize: "1.4rem", color: "red", textAlign: "center", marginTop: "20px" }}>これはブログのプレビューページです</Typography>
         <Typography variant="h2" sx={{ fontSize: "2.8rem", textAlign: "center", marginTop: "20px" }}>
           {inputTitle}
         </Typography>

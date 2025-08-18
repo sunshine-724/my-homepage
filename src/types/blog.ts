@@ -15,3 +15,11 @@ export interface BlogDetail extends Blog {
     }
     updatedAt?: string;
 }
+
+export interface Payload {
+    title: string;
+    date: string;
+    content: string;
+    tags: string[];
+    isPublished: boolean;
+}
