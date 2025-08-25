@@ -6,7 +6,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import { Backdrop, Box, Button, Chip, Collapse, Typography } from "@mui/material";
 import { useState } from "react";
 import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
-import { ChipList,getCategories } from "@/types/chip";
+import { ChipList,getTechNames } from "@/types/chip";
 import { Payload } from "@/types/blog";
 import { useRouter } from "next/navigation";
 
@@ -164,11 +164,11 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
     )
 }
 
-function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, router: ReturnType<typeof useRouter>) {
+async function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, router: ReturnType<typeof useRouter>) {
     const today = new Date();
     const s_today = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
-    const categories : string[] = aboutTechChips ? getCategories(aboutTechChips) : [""];
+    const categories : string[] = aboutTechChips ? getTechNames(aboutTechChips) : [""];
 
     const payload : Payload = {
         title:inputTitle,
@@ -179,7 +179,7 @@ function handleClickNextPageButton(inputTitle: string, inputContent: string, abo
     }
 
 
-    const res = fetch("/api/blog/postDraftTable",{
+    const res = await fetch("/api/blog/postDraftTable",{
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -187,9 +187,11 @@ function handleClickNextPageButton(inputTitle: string, inputContent: string, abo
         body: JSON.stringify(payload)
     })
 
-    console.log(res);
+    const data  = await res.json();
 
-    // router.push(`/admin/blog/preview?inputTitle=${encodedTitle}&inputContent=${encodedContent}&aboutTechChips=${encodedChips}`);
+    const id: string =  data.id;
+
+    router.push(`/admin/blog/preview?encodedID=${encodeURIComponent(id)}`);
 }
 
 export default function MakeBlogPage() {
@@ -213,7 +215,6 @@ export default function MakeBlogPage() {
 
         reader.onload = (event) => {
             const text = event.target?.result as string;
-            console.log("読み込んだ内容:", text);
             setInputContent(text);
         };
 

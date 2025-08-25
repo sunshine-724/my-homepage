@@ -1,42 +1,57 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChipData } from "@/types/chip";
+import { ChipData, getCategories } from "@/types/chip";
 import { Typography, Box, Chip, Button } from "@mui/material";
 import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { BlogDetail } from "@/types/blog";
 
 export default function PreviewPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const { getChipColor } = useChipColors(); //チップを取得する関数を取得
+  const { getChipColor, getChipCategory } = useChipColors(); //チップの情報を取得する関数を取得
 
 
+  const [blogDetail, setBlogDetail] = useState<BlogDetail>();
   const [inputTitle, setInputTitle] = useState("");
   const [inputContent, setInputContent] = useState("");
   const [aboutTechChips, setAboutTechChips] = useState<Record<string, ChipData>>({});
 
   const today = new Date();
 
+  useEffect(() => {
+    const id = searchParams?.get('encodedID') || "";
+    if (id == "") return;
+
+    (async () => {
+      const res = await fetch("/api/blog/getDraftTableItem", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(id),
+      })
+      const data = await res.json();
+      const blogDetail: BlogDetail = data;
+      setBlogDetail(blogDetail);
+    })();
+  }, [searchParams]);
 
   useEffect(() => {
-    const title = searchParams?.get("inputTitle") || "";
-    const content = searchParams?.get("inputContent") || "";
-    const chipsJson = searchParams?.get("aboutTechChips");
-
-    setInputTitle(title);
-    setInputContent(content);
-
-    if (chipsJson) {
-      try {
-        const parsed = JSON.parse(chipsJson);
-        setAboutTechChips(parsed);
-      } catch (e) {
-        console.error("Failed to parse aboutTechChips:", e);
-      }
-    }
-  }, [searchParams]);
+    if (!blogDetail) return;
+    setInputTitle(blogDetail?.title);
+    setInputContent(blogDetail?.content);
+    const newChips = blogDetail.chips.reduce<Record<string, ChipData>>((acc, chip) => {
+      acc[chip] = {
+        color: getChipColor(chip),
+        category: getChipCategory(chip),
+      };
+      return acc;
+    }, {});
+    setAboutTechChips(newChips);
+  }, [blogDetail]);
 
   return (
     <>

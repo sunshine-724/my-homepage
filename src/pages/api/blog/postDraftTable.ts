@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log(`Payload size: ${sizeInKB.toFixed(2)} KB`);
     console.log(`Payload size: ${sizeInMB.toFixed(2)} MB`);
 
-    const response = await fetch(process.env.AWS_API_GATEWAY_URL as string, {
+    const response = await fetch((process.env.AWS_API_GATEWAY_URL as string) + "drafts", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
