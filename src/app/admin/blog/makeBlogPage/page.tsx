@@ -6,8 +6,8 @@ import DownloadIcon from "@mui/icons-material/Download";
 import { Backdrop, Box, Button, Chip, Collapse, Typography } from "@mui/material";
 import { useState } from "react";
 import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
-import { ChipList,getTechNames } from "@/types/chip";
-import { Payload } from "@/types/blog";
+import { ChipList, getTechNames } from "@/types/chip";
+import { DraftTablePayload } from "@/types/payload/draftTable";
 import { useRouter } from "next/navigation";
 
 function FileUploadSection({ label, accept, multiple = false, onChange, }: { label: string; accept: string; multiple?: boolean; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; }) {
@@ -168,28 +168,28 @@ async function handleClickNextPageButton(inputTitle: string, inputContent: strin
     const today = new Date();
     const s_today = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
-    const categories : string[] = aboutTechChips ? getTechNames(aboutTechChips) : [""];
+    const categories: string[] = aboutTechChips ? getTechNames(aboutTechChips) : [""];
 
-    const payload : Payload = {
-        title:inputTitle,
-        date:s_today,
-        content:inputContent,
+    const payload: DraftTablePayload = {
+        title: inputTitle,
+        date: s_today,
+        content: inputContent,
         tags: categories,
         isPublished: false,
     }
 
 
-    const res = await fetch("/api/blog/postDraftTable",{
+    const res = await fetch("/api/blog/postDraftTable", {
         method: "POST",
-        headers:{
+        headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(payload)
     })
 
-    const data  = await res.json();
+    const data = await res.json();
 
-    const id: string =  data.id;
+    const id: string = data.id;
 
     router.push(`/admin/blog/preview?encodedID=${encodeURIComponent(id)}`);
 }

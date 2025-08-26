@@ -1,12 +1,42 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChipData, getCategories } from "@/types/chip";
+import { ChipData, ChipList, getCategories } from "@/types/chip";
 import { Typography, Box, Chip, Button } from "@mui/material";
 import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { BlogDetail } from "@/types/blog";
+import { PostTablePayload } from "@/types/payload/postTable"
+
+async function handleClickNextPageButton(blogDetail: BlogDetail | undefined, router: ReturnType<typeof useRouter>) {
+
+  if (blogDetail === undefined) {
+    return;
+  }
+  const payload: PostTablePayload = {
+    id: blogDetail.id,
+    isPublished: true, // 今は仮でtrueにする
+  }
+
+
+  const res = await fetch("/api/blog/publishPostTable", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload)
+  })
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    alert("正常に投稿できませんでした");
+  } else {
+    alert("正常に投稿できました");
+    router.push(`/`);
+  }
+}
 
 export default function PreviewPage() {
   const searchParams = useSearchParams();
@@ -104,7 +134,7 @@ export default function PreviewPage() {
         </Box>
         <Box sx={{ width: { xs: "30%", md: "10%", alignSelf: "flex-end", marginTop: "auto" } }}>
           <Button size="large"
-            onClick={() => router.push('/')}
+            onClick={() => handleClickNextPageButton(blogDetail, router)}
             sx={{
               background: "#696969", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
             }}>

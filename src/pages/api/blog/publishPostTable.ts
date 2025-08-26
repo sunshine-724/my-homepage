@@ -1,22 +1,13 @@
-import { BlogDetail } from "@/types/blog"
-import { DraftTablePayload } from "@/types/payload/draftTable"
+import { PostTablePayload } from "@/types/payload/postTable";
 import { NextApiRequest, NextApiResponse } from "next";
 
-
-interface Body {
-    id: string;
-}
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const payload: DraftTablePayload = req.body; // これで自動的にparseしてくれる
+    const payload: PostTablePayload = req.body; // これで自動的にparseしてくれる
 
     console.log("raw : " + payload);
 
-    const safePayload: DraftTablePayload = {
-        title: payload.title,
-        date: payload.date,
-        content: payload.content,
-        tags: payload.tags,
+    const safePayload: PostTablePayload = {
+        id: payload.id,
         isPublished: payload.isPublished
     };
 
@@ -32,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.log(`Payload size: ${sizeInKB.toFixed(2)} KB`);
     console.log(`Payload size: ${sizeInMB.toFixed(2)} MB`);
 
-    const response = await fetch((process.env.AWS_API_GATEWAY_URL as string) + "drafts", {
+    const response = await fetch((process.env.AWS_API_GATEWAY_URL as string) + "posts", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -53,13 +44,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const parsedBody: Body = data;
 
-    const blogDetail: BlogDetail = {
-        id: parsedBody.id,
-        title: payload.title,
-        date: payload.date,
-        content: payload.content,
-        chips: payload.tags,
-    }
-
-    res.status(200).json(blogDetail); // 明示的にレスポンスを送信する(return blogDetailと同義)
+    res.status(200).json(parsedBody); // 明示的にレスポンスを送信する(return blogDetailと同義)
 }
