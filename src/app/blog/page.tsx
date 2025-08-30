@@ -3,17 +3,45 @@ import { Box, Button, Typography } from "@mui/material";
 import ProjectCard from "../component/ProjectCard/ProjectCard"
 // import SearchAppBar from "../component/SerachBar/SearchAppBar";
 import useFetchBlogList from "@/hooks/useFetchBlogList";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { BlogDetail } from "@/types/blog";
 
 const BlogPage = () => {
   const router = useRouter(); //ルーターを取得
   // const [searchQuery, setSearchQuery] = useState(""); //検索する文字列
-  const jsonBlogList = useFetchBlogList(); //ブログリストを取得
+  // const jsonBlogList = useFetchBlogList(); //ブログリストを取得
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`api/blog/getPostTableAllItems`);
+      const data = await res.json();
+      const mappedData = data.map((blog: any, index: number) => ({
+        id: blog.id,
+        title: blog.title,
+        date: blog.date,
+        chips: blog.tags || [],
+        content: blog.content,
+      }))
+      setBlogList(mappedData);
+    }
+
+    fetchData();
+  }, []);
 
   const handleClick = (id: string) => {
     router.push(`/blog/${id}`); //クリックしたブログの詳細ページに遷移
   };
+
+  const [blogList, setBlogList] = useState<BlogDetail[] | null>(null);
+
+  if (blogList === null) {
+    return (
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+        <Typography variant="h4">ブログを読み込み中です...</Typography>
+      </Box>
+    );
+  }
 
   return (
     <>
@@ -33,10 +61,6 @@ const BlogPage = () => {
           }}> {/* mt: 0 にして調整 */}
           ブログ一覧
         </Typography>
-        {/* <SearchAppBar
-          onSearch={setSearchQuery}
-        /> */}
- 
       </Box>
 
       <Box
@@ -46,7 +70,7 @@ const BlogPage = () => {
           alignItems: "center",
         }}
       >
-        {jsonBlogList.map((json, index) => {
+        {blogList.map((json, index) => {
           return (
             <React.Fragment key={index}>
               <Button
