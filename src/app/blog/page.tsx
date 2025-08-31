@@ -30,7 +30,8 @@ const BlogPage = () => {
   }, []);
 
   const handleClick = (id: string) => {
-    router.push(`/blog/${id}`); //クリックしたブログの詳細ページに遷移
+    const query = encodeURIComponent(id);
+    router.push(`/blog/${query}`); //クリックしたブログの詳細ページに遷移
   };
 
   const [blogList, setBlogList] = useState<BlogDetail[] | null>(null);
