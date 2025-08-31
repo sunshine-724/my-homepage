@@ -22,9 +22,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const data = await response.json(); // パースする
-    console.log("json Data is " + data.body);
-    const bodyAsJson = JSON.parse(data.body);
-
+    
+    // data.bodyが存在するかチェック
+    let bodyAsJson;
+    if (!data.body) {
+        console.error("data.body is undefined. Using data directly:", data);
+        // data自体がブログリストの場合はそのまま使用
+        bodyAsJson = Array.isArray(data) ? data : [];
+    } else {
+        bodyAsJson = JSON.parse(data.body);
+        console.log("bodyAsJson is:", bodyAsJson);
+    }
 
     const blogList: BlogDetail[] = bodyAsJson.map((blog: any, index: number) => ({
         id: blog.id,
