@@ -9,6 +9,7 @@ import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
 import { ChipList, getTechNames } from "@/types/chip";
 import { DraftTablePayload } from "@/types/payload/draftTable";
 import { useRouter } from "next/navigation";
+import { a, form } from "framer-motion/client";
 
 function FileUploadSection({ label, accept, multiple = false, onChange, }: { label: string; accept: string; multiple?: boolean; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; }) {
     return (
@@ -164,32 +165,55 @@ function DisplayTechnicalList({ selectedChips, setSelectedChips, }: { selectedCh
     )
 }
 
-async function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, router: ReturnType<typeof useRouter>) {
+async function handleClickNextPageButton(inputTitle: string, inputContent: string, aboutTechChips: ChipList | null, attachmentFiles: File[], router: ReturnType<typeof useRouter>) {
     const today = new Date();
     const s_today = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
     const categories: string[] = aboutTechChips ? getTechNames(aboutTechChips) : [""];
 
-    const payload: DraftTablePayload = {
-        title: inputTitle,
-        date: s_today,
-        content: inputContent,
-        tags: categories,
-        isPublished: false,
+
+    let data;
+    if (!attachmentFiles || attachmentFiles.length === 0) {
+        const payload: DraftTablePayload = {
+            title: inputTitle,
+            date: s_today,
+            content: inputContent,
+            tags: categories,
+            isPublished: false
+        };
+
+        const res = await fetch("/api/blog/postDraftTable", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        data = await res.json();
+    } else {
+        const formData = new FormData(); // 送信するデータを作成する
+        formData.append("title", inputTitle);
+        formData.append("date", s_today);
+        formData.append("content", inputContent);
+        attachmentFiles.forEach(file => {
+            formData.append("attachments", file);
+        });
+
+        formData.append("tags", JSON.stringify(categories));
+        formData.append("isPublished", "false");
+
+        const res = await fetch("/api/blog/postDraftTable", {
+            method: "POST",
+            body: formData // Content-Typeのboundaryなどの設定は自動でしてくれる(FormDataを使っているから)
+        })
+        data = await res.json();
     }
 
-
-    const res = await fetch("/api/blog/postDraftTable", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload)
-    })
-
-    const data = await res.json();
-
     const id: string = data.id;
+    if (id === null) {
+        alert("Error: ID is null");
+    }
 
     router.push(`/admin/blog/preview?encodedID=${encodeURIComponent(id)}`);
 }
@@ -302,7 +326,7 @@ export default function MakeBlogPage() {
                 </Box>
                 <Box sx={{ width: { xs: "30%", md: "15%" }, display: "flex", alignSelf: "flex-end" }}>
                     <Button size="large"
-                        onClick={() => handleClickNextPageButton(inputTitle, inputContent, aboutTechChips, router)}
+                        onClick={() => handleClickNextPageButton(inputTitle, inputContent, aboutTechChips, attachmentFiles, router)}
                         sx={{
                             background: "#696969", color: "white", width: "100%", height: "100%", fontSize: "1.5rem", borderRadius: "12px"
                         }}
