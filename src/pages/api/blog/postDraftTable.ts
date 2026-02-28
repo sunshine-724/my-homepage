@@ -3,7 +3,9 @@ import { DraftTablePayload } from "@/types/payload/draftTable"
 import formidable from "formidable";
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from 'fs/promises';
+import os from 'os';
 import { withJson } from "@/lib/withJson";
+import path from "path";
 
 // Next.jsのbodyに対する自動パースを無効化(formidable用のパースに対応していないため)
 export const config = {
@@ -57,9 +59,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     } else if (req.headers['content-type']?.startsWith("multipart/form-data")) {
         console.log("テキストデータとファイルデータを受け取りました");
 
+        const uploadDir = path.join(os.tmpdir(), 'tmp');
+        await fs.mkdir(uploadDir, { recursive: true }); // もしディレクトリが存在しない場合生成する
+
         // formidableでファイルとフィールドを解析
         const form = formidable({
-            uploadDir: '/tmp', // 一時的なディレクトリを生成する
+            uploadDir: uploadDir, // 一時的なディレクトリを生成する
             keepExtensions: true,
             maxFileSize: 10 * 1024 * 1024, // 10MB制限
         });
