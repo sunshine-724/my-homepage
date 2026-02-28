@@ -1,5 +1,4 @@
 import { BlogDetail } from "@/types/blog";
-import { Update } from "@mui/icons-material";
 import { NextApiRequest, NextApiResponse } from "next";
 
 
@@ -24,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const data = await response.json(); // パースする
-    
+
     // data.bodyが存在するかチェック
     let bodyAsJson;
     if (!data.body) {
