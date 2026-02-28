@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChipData, ChipList, getCategories } from "@/types/chip";
+import { ChipData } from "@/types/chip";
 import { Typography, Box, Chip, Button } from "@mui/material";
 import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
 import ReactMarkdown from "react-markdown";
@@ -27,8 +27,6 @@ async function handleClickNextPageButton(blogDetail: BlogDetail | undefined, rou
     },
     body: JSON.stringify(payload)
   })
-
-  const data = await res.json();
 
   if (!res.ok) {
     alert("正常に投稿できませんでした");
@@ -81,7 +79,7 @@ export default function PreviewPage() {
       return acc;
     }, {});
     setAboutTechChips(newChips);
-  }, [blogDetail]);
+  }, [blogDetail, getChipCategory, getChipColor]);
 
   return (
     <>

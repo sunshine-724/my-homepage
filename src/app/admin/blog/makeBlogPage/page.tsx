@@ -9,7 +9,6 @@ import { useChipColors } from "@/app/component/ProjectCard/useChipColors";
 import { ChipList, getTechNames } from "@/types/chip";
 import { DraftTablePayload } from "@/types/payload/draftTable";
 import { useRouter } from "next/navigation";
-import { a, form } from "framer-motion/client";
 
 function FileUploadSection({ label, accept, multiple = false, onChange, }: { label: string; accept: string; multiple?: boolean; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; }) {
     return (

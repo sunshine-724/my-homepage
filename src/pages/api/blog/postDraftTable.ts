@@ -1,4 +1,3 @@
-import { BlogDetail } from "@/types/blog"
 import { DraftTablePayload } from "@/types/payload/draftTable"
 import formidable from "formidable";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -18,7 +17,7 @@ interface Body {
     id: string;
 }
 
-function confirmDataValue(data: any): void {
+function confirmDataValue(data: unknown): void {
     /* 通信サイズ確認 */
     const jsonString = JSON.stringify(data);
     const sizeInBytes = new Blob([jsonString]).size;
@@ -55,7 +54,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
             },
             body: JSON.stringify(safePayload)
         });
-        
+
     } else if (req.headers['content-type']?.startsWith("multipart/form-data")) {
         console.log("テキストデータとファイルデータを受け取りました");
 
@@ -70,22 +69,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         });
         const [fields, files] = await form.parse(req);
         console.log("Parsed files object from formidable:", JSON.stringify(files, null, 2));
-
-        // フィールドデータを取得
-        const title = Array.isArray(fields.title) ? fields.title[0] : fields.title;
-        const content = Array.isArray(fields.content) ? fields.content[0] : fields.content;
-        const date = Array.isArray(fields.date) ? fields.date[0] : fields.date;
-
-        let tags: string[] = [];
-        try {
-            const tagsField = Array.isArray(fields.tags) ? fields.tags[0] : fields.tags;
-            if (tagsField) {
-                tags = JSON.parse(tagsField);
-            }
-        } catch (error) {
-            console.log('No tags');
-            tags = []; // デフォルト値
-        }
 
         const nativeFormData = new FormData();
 

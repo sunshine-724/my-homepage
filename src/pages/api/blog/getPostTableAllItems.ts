@@ -1,6 +1,13 @@
 import { BlogDetail } from "@/types/blog";
-import { Update } from "@mui/icons-material";
 import { NextApiRequest, NextApiResponse } from "next";
+
+type PostTableApiItem = {
+    id: string;
+    title: string;
+    date: string;
+    tags?: string[];
+    content: string;
+};
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -22,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const data = await response.json(); // パースする
-    
+
     // data.bodyが存在するかチェック
     let bodyAsJson;
     if (!data.body) {
@@ -34,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         console.log("bodyAsJson is:", bodyAsJson);
     }
 
-    const blogList: BlogDetail[] = bodyAsJson.map((blog: any, index: number) => ({
+    const blogList: BlogDetail[] = bodyAsJson.map((blog: PostTableApiItem) => ({
         id: blog.id,
         title: blog.title,
         date: blog.date,

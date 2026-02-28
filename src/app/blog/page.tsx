@@ -1,11 +1,17 @@
 "use client"
 import { Box, Button, Typography } from "@mui/material";
 import ProjectCard from "../component/ProjectCard/ProjectCard"
-// import SearchAppBar from "../component/SerachBar/SearchAppBar";
-import useFetchBlogList from "@/hooks/useFetchBlogList";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { BlogDetail } from "@/types/blog";
+
+type PostTableApiItem = {
+  id: string;
+  title: string;
+  date: string;
+  tags?: string[];
+  content: string;
+};
 
 const BlogPage = () => {
   const router = useRouter(); //ルーターを取得
@@ -15,8 +21,8 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(`api/blog/getPostTableAllItems`);
-      const data = await res.json();
-      const mappedData = data.map((blog: any, index: number) => ({
+      const data = (await res.json()) as PostTableApiItem[];
+      const mappedData = data.map((blog) => ({
         id: blog.id,
         title: blog.title,
         date: blog.date,
